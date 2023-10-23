@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. WebApi", "01. WebApi", "{99E2BB8F-90E9-44B2-B6D9-421BDB38FDF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Core", "02. Core", "{00A3A91C-9792-4D36-91BF-881341D88751}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Data", "03. Data", "{5D5CDCE8-F286-49F6-970C-5D96B735AB22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Manager", "04. Manager", "{44B61651-EE3F-4D0B-A771-16DFF467C2AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Tests", "05. Tests", "{25870617-88F8-433A-8D28-D9FF49E0AA82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleMaquinasMx", "ControleMaquinasMx\ControleMaquinasMx.csproj", "{481F3396-9160-4AA3-A9AC-A8AB833E1A58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleMaquinasMx_Core", "Core\ControleMaquinasMx_Core.csproj", "{F3C0021D-13C4-4DE3-9BAA-6E39D04DE1E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleMaquinasMx_Data", "ControleMaquinasMx.Data\ControleMaquinasMx_Data.csproj", "{2C615376-6D68-42EE-9E34-945AA8B326FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleMaquinasMx_Manager", "ControleMaquinasMx.Manager\ControleMaquinasMx_Manager.csproj", "{4B358B83-A5E3-44B7-AE83-7CDB55CE8A4E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{481F3396-9160-4AA3-A9AC-A8AB833E1A58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{481F3396-9160-4AA3-A9AC-A8AB833E1A58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{481F3396-9160-4AA3-A9AC-A8AB833E1A58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{481F3396-9160-4AA3-A9AC-A8AB833E1A58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3C0021D-13C4-4DE3-9BAA-6E39D04DE1E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3C0021D-13C4-4DE3-9BAA-6E39D04DE1E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3C0021D-13C4-4DE3-9BAA-6E39D04DE1E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3C0021D-13C4-4DE3-9BAA-6E39D04DE1E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C615376-6D68-42EE-9E34-945AA8B326FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C615376-6D68-42EE-9E34-945AA8B326FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C615376-6D68-42EE-9E34-945AA8B326FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C615376-6D68-42EE-9E34-945AA8B326FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B358B83-A5E3-44B7-AE83-7CDB55CE8A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B358B83-A5E3-44B7-AE83-7CDB55CE8A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B358B83-A5E3-44B7-AE83-7CDB55CE8A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B358B83-A5E3-44B7-AE83-7CDB55CE8A4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{481F3396-9160-4AA3-A9AC-A8AB833E1A58} = {99E2BB8F-90E9-44B2-B6D9-421BDB38FDF1}
+		{F3C0021D-13C4-4DE3-9BAA-6E39D04DE1E4} = {00A3A91C-9792-4D36-91BF-881341D88751}
+		{2C615376-6D68-42EE-9E34-945AA8B326FA} = {5D5CDCE8-F286-49F6-970C-5D96B735AB22}
+		{4B358B83-A5E3-44B7-AE83-7CDB55CE8A4E} = {44B61651-EE3F-4D0B-A771-16DFF467C2AD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AED0A840-5FE7-406D-8ECF-48A5426CC54A}
+	EndGlobalSection
+EndGlobal
