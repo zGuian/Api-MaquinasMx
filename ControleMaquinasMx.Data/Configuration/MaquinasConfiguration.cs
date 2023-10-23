@@ -8,6 +8,7 @@ namespace ControleMaquinasMx_Data.Configuration
     {
         public void Configure(EntityTypeBuilder<Maquinas> builder)
         {
+            
         }
     }
 }

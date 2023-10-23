@@ -68,3 +68,7 @@ C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx\obj\D
 C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx\obj\Debug\net6.0\ControleMaquinasMx.pdb
 C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx\obj\Debug\net6.0\ControleMaquinasMx.genruntimeconfig.cache
 C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx\obj\Debug\net6.0\ref\ControleMaquinasMx.dll
+C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\Humanizer.dll
+C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\ControleMaquinasMx_Manager.dll
+C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\ControleMaquinasMx_Manager.pdb

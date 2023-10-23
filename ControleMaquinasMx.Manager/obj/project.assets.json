@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "ControleMaquinasMx_Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ControleMaquinasMx_Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ControleMaquinasMx_Core.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ControleMaquinasMx_Core/1.0.0": {
+      "type": "project",
+      "path": "../ControleMaquinasMx.Core/ControleMaquinasMx_Core.csproj",
+      "msbuildProject": "../ControleMaquinasMx.Core/ControleMaquinasMx_Core.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "ControleMaquinasMx_Core >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\fgb171\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj": {
+              "projectPath": "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

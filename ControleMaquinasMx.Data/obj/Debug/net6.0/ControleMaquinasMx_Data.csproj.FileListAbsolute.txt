@@ -15,3 +15,5 @@ C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Data\
 C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Data\obj\Debug\net6.0\ControleMaquinasMx_Data.pdb
 C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Data\obj\Debug\net6.0\ControleMaquinasMx_Data.genruntimeconfig.cache
 C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Data\obj\Debug\net6.0\ref\ControleMaquinasMx_Data.dll
+C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Data\bin\Debug\net6.0\ControleMaquinasMx_Manager.dll
+C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Data\bin\Debug\net6.0\ControleMaquinasMx_Manager.pdb
