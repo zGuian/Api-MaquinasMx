@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "HIQxP8NM8fhNDRlVYD9iu111f9UJJ2Qz3EMcq3TFoh4YkeAdznfbmgCktIAagAl9qKtLTDZXbkrbWv3pgjNDVg==",
+  "dgSpecHash": "NCGrPH4WIaU4JdKHxiLmIy+eNiV4qCZcUNx2rwYy2AA3qlEZUsYGZa4NY1Nkh1naw+gPsHm0aaUC+svEsTbghA==",
   "success": true,
   "projectFilePath": "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx.Manager\\ControleMaquinasMx_Manager.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\fgb171\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\fgb171\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

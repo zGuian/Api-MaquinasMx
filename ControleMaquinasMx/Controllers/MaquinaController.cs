@@ -1,4 +1,5 @@
-﻿using ControleMaquinasMx.Core.Models;
+﻿using ControleMaquinasMx_CoreShared.Dtos;
+using ControleMaquinasMx_CoreShared.MaquinasDtos;
 using ControleMaquinasMx_Manager.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +17,7 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> BuscaTodasMaquinas()
+        public async Task<IActionResult> BuscaTodasMaquinas()
         {
             var result = await _maquinasManager.SearchMaquinasAsync();
             if (result == null)
@@ -27,45 +28,45 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpGet("GetId/{id}")]
-        public async Task<ActionResult> BuscarMaquinaPorId(int id)
+        public async Task<IActionResult> BuscarMaquinaPorId(int id)
         {
             var result = await _maquinasManager.SearchMaquinasIdAsync(id);
             if (result == null)
             {
-                return NotFound();
+                return NotFound($"Maquina não encontrada \nconsulte o ID: {id} enviado");
             }
             return Ok(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AdicionarMaquinas([FromBody] Maquinas maquinaDto)
+        public async Task<IActionResult> AdicionarMaquinas(CreateMaquinasDto maquinaDto)
         {
             var result = await _maquinasManager.InsertMaquinasAsync(maquinaDto);
             if (result == null)
             {
-                return NotFound();
+                return NotFound("Não foi possivel cadastrar a maquina. Consulte os paramentros enviados: " + maquinaDto);
             }
-            return CreatedAtAction(nameof(BuscarMaquinaPorId), result);
+            return CreatedAtAction(nameof(AdicionarMaquinas), result);
         }
 
         [HttpPut("Update/{id}")]
-        public async Task<IActionResult> AtualizarMaquina([FromBody] Maquinas maquinasDto, int id)
+        public async Task<IActionResult> AtualizarMaquina([FromBody] UpdateMaquinasDto maquinasDto, int id)
         {
-            var result = await _maquinasManager.UpdateMaquinasAsync(id, maquinasDto);
+            var result = await _maquinasManager.UpdateMaquinasAsync(maquinasDto, id);
             if (result == null)
             {
-                return NotFound(id);
+                return NotFound($"Não foi possivel atualizar a maquina. Id não encontrado: \nId enviado: {id}");
             }
             return Ok(result);
         }
 
         [HttpDelete]
-        public async Task<ActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var result = await _maquinasManager.DeleteMaquinasAsync(id);
             if (result == false)
             {
-                return NotFound();
+                return NotFound("Não foi possivel deletar a maquina. Id não encontrado");
             }
             return Ok("Maquina excluida com sucesso");
         }

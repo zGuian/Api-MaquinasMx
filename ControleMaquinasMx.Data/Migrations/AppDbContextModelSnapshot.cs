@@ -30,10 +30,8 @@ namespace ControleMaquinasMx_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Criticidade")
-                        .IsRequired()
-                        .HasMaxLength(1)
-                        .HasColumnType("nvarchar(1)");
+                    b.Property<byte>("Criticidade")
+                        .HasColumnType("tinyint");
 
                     b.Property<DateTime?>("DataCadastro")
                         .HasColumnType("datetime2");

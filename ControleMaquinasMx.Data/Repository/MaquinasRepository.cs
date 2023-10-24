@@ -1,6 +1,9 @@
-﻿using ControleMaquinasMx.Core.Models;
+﻿using AutoMapper;
+using ControleMaquinasMx.Core.Models;
 using ControleMaquinasMx.Data.Data;
 using ControleMaquinasMx_Core.Interfaces;
+using ControleMaquinasMx_CoreShared.Dtos;
+using ControleMaquinasMx_CoreShared.MaquinasDtos;
 using Microsoft.EntityFrameworkCore;
 
 namespace ControleMaquinasMx_Data.Repository
@@ -8,50 +11,55 @@ namespace ControleMaquinasMx_Data.Repository
     public class MaquinasRepository : IMaquinasRepository
     {
         private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
 
-        public MaquinasRepository(AppDbContext context)
+        public MaquinasRepository(AppDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        public async Task<IEnumerable<Maquinas>> SearchAllMaquinasAsync()
+        public async Task<IEnumerable<ReadMaquinasDto>> SearchAllMaquinasAsync()
         {
             var maquinas = await _context.Maquinas.AsNoTracking().ToListAsync();
-            var contagem = maquinas!.Count;
+            int contagem = maquinas!.Count;
             if (contagem == 0)
             {
                 return null!;
             }
-            return maquinas;
+            var maquinaDto = _mapper.Map<List<ReadMaquinasDto>>(maquinas);
+            return maquinaDto;
         }
 
-        public async Task<Maquinas> SearchMaquinasByIdAsync(int id)
+        public async Task<ReadMaquinasDto> SearchMaquinasByIdAsync(int id)
         {
             var maquinaId = await _context.Maquinas.FindAsync(id);
             if (maquinaId == null)
             {
                 return null!;
             }
-                return maquinaId;
+            var maquinaDto = _mapper.Map<ReadMaquinasDto>(maquinaId);
+            return maquinaDto;
         }
 
-        public async Task<Maquinas> InsertMaquinasAsync(Maquinas maquinas)
+        public async Task<Maquinas> InsertMaquinasAsync(CreateMaquinasDto maquinaDto)
         {
-            await _context.Maquinas.AddAsync(maquinas);
+            var maquina = _mapper.Map<Maquinas>(maquinaDto);
+            await _context.Maquinas.AddAsync(maquina);
             await _context.SaveChangesAsync();
-            return maquinas;
+            return maquina;
         }
 
-        public async Task<Maquinas> UpdateMaquinasAsync(int id, Maquinas maquinas)
+        public async Task<Maquinas> UpdateMaquinasAsync(UpdateMaquinasDto maquinaDto, int id)
         {
-            var maquinaId = _context.Maquinas.FirstOrDefaultAsync(x=> x.Id == id);
-            if (maquinaId  == null)
+            var maquina = await _context.Maquinas.FirstOrDefaultAsync(x => x.Id == id);
+            if (maquina == null)
             {
                 return null!;
-            }
-            await _context.Maquinas.AddAsync(maquinas);
+            }   
+            _mapper.Map(maquinaDto, maquina);
             await _context.SaveChangesAsync();
-            return maquinas;
+            return maquina;
         }
 
         public async Task<bool> DeleteMaquinasAsync(int id)

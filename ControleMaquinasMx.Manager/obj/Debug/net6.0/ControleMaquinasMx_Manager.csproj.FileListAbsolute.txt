@@ -13,3 +13,5 @@ C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Manag
 C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Manager\bin\Debug\net6.0\ControleMaquinasMx_Core.dll
 C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Manager\bin\Debug\net6.0\ControleMaquinasMx_Core.pdb
 C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Manager\obj\Debug\net6.0\ControleMaquinasMx_Manager.csproj.CopyComplete
+C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Manager\bin\Debug\net6.0\ControleMaquinasMx_CoreShared.dll
+C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Manager\bin\Debug\net6.0\ControleMaquinasMx_CoreShared.pdb

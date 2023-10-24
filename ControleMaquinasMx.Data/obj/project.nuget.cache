@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "0T/42+qIh59P9NvD9CoQICbvOZk3BnWq7xRqfU180oD5+1GnpacFrSWw7iFMhFz/qA6J2aEewtnQ/zhPgwCLjQ==",
+  "dgSpecHash": "1ImwoaoMYjX8ntG7BVNdL+/SIyNxXjDqCNBFsCRTyCDui2kDcih9v7jBntDD9keqC0Ymcmk6oAXA4IZ+2Z019w==",
   "success": true,
   "projectFilePath": "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx.Data\\ControleMaquinasMx_Data.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\fgb171\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\fgb171\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\fgb171\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.22\\microsoft.entityframeworkcore.6.0.22.nupkg.sha512",

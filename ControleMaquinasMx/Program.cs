@@ -12,6 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(opts => opts.UseSqlServer(
     builder.Configuration.GetConnectionString("AppDbContext")));
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddScoped<IMaquinasRepository, MaquinasRepository>();
 builder.Services.AddScoped<IMaquinasManager, MaquinasManager>();
 

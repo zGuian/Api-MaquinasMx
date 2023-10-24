@@ -1,13 +1,15 @@
 ﻿using ControleMaquinasMx.Core.Models;
+using ControleMaquinasMx_CoreShared.Dtos;
+using ControleMaquinasMx_CoreShared.MaquinasDtos;
 
 namespace ControleMaquinasMx_Manager.Interfaces
 {
     public interface IMaquinasManager
     {
+        Task<IEnumerable<ReadMaquinasDto>> SearchMaquinasAsync();
+        Task<ReadMaquinasDto> SearchMaquinasIdAsync(int id);
+        Task<Maquinas> InsertMaquinasAsync(CreateMaquinasDto maquinas);
+        Task<Maquinas> UpdateMaquinasAsync(UpdateMaquinasDto maquinasDto, int id);
         Task<bool> DeleteMaquinasAsync(int id);
-        Task<Maquinas> InsertMaquinasAsync(Maquinas maquinas);
-        Task<IEnumerable<Maquinas>> SearchMaquinasAsync();
-        Task<Maquinas> SearchMaquinasIdAsync(int id);
-        Task<Maquinas> UpdateMaquinasAsync(int id, Maquinas maquinas);
     }
 }

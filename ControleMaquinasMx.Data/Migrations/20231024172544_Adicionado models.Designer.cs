@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControleMaquinasMx_Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231023173011_Add Models")]
-    partial class AddModels
+    [Migration("20231024172544_Adicionado models")]
+    partial class Adicionadomodels
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,10 +32,8 @@ namespace ControleMaquinasMx_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Criticidade")
-                        .IsRequired()
-                        .HasMaxLength(1)
-                        .HasColumnType("nvarchar(1)");
+                    b.Property<byte>("Criticidade")
+                        .HasColumnType("tinyint");
 
                     b.Property<DateTime?>("DataCadastro")
                         .HasColumnType("datetime2");

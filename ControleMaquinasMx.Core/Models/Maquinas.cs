@@ -17,15 +17,14 @@ namespace ControleMaquinasMx.Core.Models
         [Required(ErrorMessage = "Informação obrigatoria")]
         public bool Ondeso { get; set; }
 
-        [Range(1, 3)]
-        [MaxLength(1)]
-        public char Criticidade { get; set; }
+        [Required(ErrorMessage = "Defina uma criticidade para maquina")]
+        public byte Criticidade { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:/dd/MM/yyyy HH:mm}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:/dd/MM/yyyy HH:mm}")]
         [DataType(DataType.DateTime)]
         public DateTime? DataCadastro { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:/dd/MM/yyyy HH:mm}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:/dd/MM/yyyy HH:mm}")]
         [DataType(DataType.DateTime)]
         public DateTime? UltimaAtualizacao { get; set; }
     }
