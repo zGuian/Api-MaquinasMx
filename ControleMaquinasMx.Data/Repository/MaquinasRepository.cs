@@ -2,6 +2,7 @@
 using ControleMaquinasMx.Core.Models;
 using ControleMaquinasMx.Data.Data;
 using ControleMaquinasMx_Core.Interfaces;
+using ControleMaquinasMx_Core.Models;
 using ControleMaquinasMx_CoreShared.Dtos;
 using ControleMaquinasMx_CoreShared.MaquinasDtos;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +22,9 @@ namespace ControleMaquinasMx_Data.Repository
 
         public async Task<IEnumerable<ReadMaquinasDto>> SearchAllMaquinasAsync()
         {
-            var maquinas = await _context.Maquinas.AsNoTracking().ToListAsync();
+            var maquinas = await _context.Maquinas.Include(x => x.Pacotes)
+                                                  .AsNoTracking()
+                                                  .ToListAsync();
             int contagem = maquinas!.Count;
             if (contagem == 0)
             {
@@ -33,7 +36,8 @@ namespace ControleMaquinasMx_Data.Repository
 
         public async Task<ReadMaquinasDto> SearchMaquinasByIdAsync(int id)
         {
-            var maquinaId = await _context.Maquinas.FindAsync(id);
+            var maquinaId = await _context.Maquinas.Include(x => x.Pacotes)
+                                                   .SingleOrDefaultAsync(x => x.Id == id);
             if (maquinaId == null)
             {
                 return null!;
@@ -45,6 +49,7 @@ namespace ControleMaquinasMx_Data.Repository
         public async Task<Maquinas> InsertMaquinasAsync(CreateMaquinasDto maquinaDto)
         {
             var maquina = _mapper.Map<Maquinas>(maquinaDto);
+            maquina.Pacotes = maquinaDto.Pacotes.Select(x => _mapper.Map<Pacotes>(x)).ToList();
             await _context.Maquinas.AddAsync(maquina);
             await _context.SaveChangesAsync();
             return maquina;

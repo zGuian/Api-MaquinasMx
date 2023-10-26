@@ -330,7 +330,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj": {
+                "projectPath": "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ControleMaquinasMx_Core.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace ControleMaquinasMx.Core.Models
 {
@@ -27,5 +28,7 @@ namespace ControleMaquinasMx.Core.Models
         [DisplayFormat(DataFormatString = "{0:/dd/MM/yyyy HH:mm}")]
         [DataType(DataType.DateTime)]
         public DateTime? UltimaAtualizacao { get; set; }
+        public int PacotesId { get; set; }
+        public ICollection<Pacotes> Pacotes { get; set; }
     }
 }

@@ -34,6 +34,9 @@
         }
       },
       "ControleMaquinasMx_CoreShared/1.0.0": {
+        "dependencies": {
+          "ControleMaquinasMx_Core": "1.0.0"
+        },
         "runtime": {
           "ControleMaquinasMx_CoreShared.dll": {}
         }

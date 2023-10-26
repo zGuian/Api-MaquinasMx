@@ -22,6 +22,33 @@ namespace ControleMaquinasMx_Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacotes", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime?>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataInstalacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MaquinasId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NomeKb")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MaquinasId");
+
+                    b.ToTable("Pacotes");
+                });
+
             modelBuilder.Entity("ControleMaquinasMx.Core.Models.Maquinas", b =>
                 {
                     b.Property<int>("Id")
@@ -47,12 +74,31 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.Property<bool>("Ondeso")
                         .HasColumnType("bit");
 
+                    b.Property<int>("PacotesId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("UltimaAtualizacao")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
                     b.ToTable("Maquinas");
+                });
+
+            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacotes", b =>
+                {
+                    b.HasOne("ControleMaquinasMx.Core.Models.Maquinas", "Maquinas")
+                        .WithMany("Pacotes")
+                        .HasForeignKey("MaquinasId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Maquinas");
+                });
+
+            modelBuilder.Entity("ControleMaquinasMx.Core.Models.Maquinas", b =>
+                {
+                    b.Navigation("Pacotes");
                 });
 #pragma warning restore 612, 618
         }
