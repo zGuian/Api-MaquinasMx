@@ -1,4 +1,5 @@
 ﻿using ControleMaquinasMx_Core.Models;
+using ControleMaquinasMx_Core.Models.Enum;
 using System.ComponentModel.DataAnnotations;
 
 namespace ControleMaquinasMx.Core.Models
@@ -19,7 +20,7 @@ namespace ControleMaquinasMx.Core.Models
         public bool Ondeso { get; set; }
 
         [Required(ErrorMessage = "Defina uma criticidade para maquina")]
-        public byte Criticidade { get; set; }
+        public Criticidade Criticidade { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:/dd/MM/yyyy HH:mm}")]
         [DataType(DataType.DateTime)]
@@ -28,7 +29,6 @@ namespace ControleMaquinasMx.Core.Models
         [DisplayFormat(DataFormatString = "{0:/dd/MM/yyyy HH:mm}")]
         [DataType(DataType.DateTime)]
         public DateTime? UltimaAtualizacao { get; set; }
-        public int PacotesId { get; set; }
-        public ICollection<Pacotes> Pacotes { get; set; }
+        public ICollection<Pacotes>? Pacotes { get; set; }
     }
 }

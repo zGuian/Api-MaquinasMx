@@ -1,4 +1,5 @@
-﻿using ControleMaquinasMx_CoreShared.PacotesDtos;
+﻿using ControleMaquinasMx_Core.Models.Enum;
+using ControleMaquinasMx_CoreShared.PacotesDtos;
 
 namespace ControleMaquinasMx_CoreShared.MaquinasDtos
 {
@@ -8,8 +9,9 @@ namespace ControleMaquinasMx_CoreShared.MaquinasDtos
         public string? Inventario { get; set; }
         public string? Hostname { get; set; }
         public bool Ondeso { get; set; }
-        public byte Criticidade { get; set; }
-        public DateTime? UltimaAtualizacao { get; }
-        public IEnumerable<ReadPacotesDto>? PacotesDto { get; set; }
+        public Criticidade Criticidade { get; set; }
+        public DateTime? DataCadastro { get; set; }
+        public DateTime? UltimaAtualizacao { get; set; }
+        public ICollection<ReadPacotesDto>? Pacotes { get; set; }
     }
 }

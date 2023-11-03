@@ -9,7 +9,7 @@ namespace ControleMaquinasMx_Manager.Interfaces
         Task<IEnumerable<ReadMaquinasDto>> SearchMaquinasAsync();
         Task<ReadMaquinasDto> SearchMaquinasIdAsync(int id);
         Task<Maquinas> InsertMaquinasAsync(CreateMaquinasDto maquinas);
-        Task<Maquinas> UpdateMaquinasAsync(UpdateMaquinasDto maquinasDto, int id);
+        Task<Maquinas> UpdateMaquinasAsync(UpdateMaquinasDto maquinas, int id);
         Task<bool> DeleteMaquinasAsync(int id);
     }
 }

@@ -1,10 +1,6 @@
-﻿using AutoMapper;
-using ControleMaquinasMx.Core.Models;
+﻿using ControleMaquinasMx.Core.Models;
 using ControleMaquinasMx.Data.Data;
 using ControleMaquinasMx_Core.Interfaces;
-using ControleMaquinasMx_Core.Models;
-using ControleMaquinasMx_CoreShared.Dtos;
-using ControleMaquinasMx_CoreShared.MaquinasDtos;
 using Microsoft.EntityFrameworkCore;
 
 namespace ControleMaquinasMx_Data.Repository
@@ -12,59 +8,50 @@ namespace ControleMaquinasMx_Data.Repository
     public class MaquinasRepository : IMaquinasRepository
     {
         private readonly AppDbContext _context;
-        private readonly IMapper _mapper;
 
-        public MaquinasRepository(AppDbContext context, IMapper mapper)
+        public MaquinasRepository(AppDbContext context)
         {
             _context = context;
-            _mapper = mapper;
         }
 
-        public async Task<IEnumerable<ReadMaquinasDto>> SearchAllMaquinasAsync()
+        public async Task<IEnumerable<Maquinas>> SearchAllMaquinasAsync()
         {
-            var maquinas = await _context.Maquinas.Include(x => x.Pacotes)
-                                                  .AsNoTracking()
+            var maquinas = await _context.Maquinas.AsNoTracking()
                                                   .ToListAsync();
-            int contagem = maquinas!.Count;
+            int contagem = maquinas.Count;
             if (contagem == 0)
             {
                 return null!;
             }
-            var maquinaDto = _mapper.Map<List<ReadMaquinasDto>>(maquinas);
-            return maquinaDto;
+            return maquinas;
         }
 
-        public async Task<ReadMaquinasDto> SearchMaquinasByIdAsync(int id)
+        public async Task<Maquinas> SearchMaquinasByIdAsync(int id)
         {
-            var maquinaId = await _context.Maquinas.Include(x => x.Pacotes)
-                                                   .SingleOrDefaultAsync(x => x.Id == id);
+            var maquinaId = await _context.Maquinas.SingleOrDefaultAsync(x => x.Id == id);
             if (maquinaId == null)
             {
                 return null!;
             }
-            var maquinaDto = _mapper.Map<ReadMaquinasDto>(maquinaId);
-            return maquinaDto;
+            return maquinaId;
         }
 
-        public async Task<Maquinas> InsertMaquinasAsync(CreateMaquinasDto maquinaDto)
+        public async Task<Maquinas> InsertMaquinasAsync(Maquinas maquina)
         {
-            var maquina = _mapper.Map<Maquinas>(maquinaDto);
-            maquina.Pacotes = maquinaDto.Pacotes.Select(x => _mapper.Map<Pacotes>(x)).ToList();
             await _context.Maquinas.AddAsync(maquina);
             await _context.SaveChangesAsync();
             return maquina;
         }
 
-        public async Task<Maquinas> UpdateMaquinasAsync(UpdateMaquinasDto maquinaDto, int id)
+        public async Task<Maquinas> UpdateMaquinasAsync(Maquinas maquina, int id)
         {
-            var maquina = await _context.Maquinas.FirstOrDefaultAsync(x => x.Id == id);
-            if (maquina == null)
+            var maquinaId = await _context.Maquinas.FirstOrDefaultAsync(x => x.Id == id);
+            if (maquinaId == null)
             {
                 return null!;
-            }   
-            _mapper.Map(maquinaDto, maquina);
+            }
             await _context.SaveChangesAsync();
-            return maquina;
+            return maquinaId;
         }
 
         public async Task<bool> DeleteMaquinasAsync(int id)

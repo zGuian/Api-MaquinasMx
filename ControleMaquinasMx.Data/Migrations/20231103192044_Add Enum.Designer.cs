@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControleMaquinasMx_Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231026144814_Relacao 1pN")]
-    partial class Relacao1pN
+    [Migration("20231103192044_Add Enum")]
+    partial class AddEnum
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,10 +38,11 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.Property<DateTime>("DataInstalacao")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("MaquinasId")
+                    b.Property<int?>("MaquinasId")
                         .HasColumnType("int");
 
                     b.Property<string>("NomeKb")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -59,8 +60,9 @@ namespace ControleMaquinasMx_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<byte>("Criticidade")
-                        .HasColumnType("tinyint");
+                    b.Property<string>("Criticidade")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("DataCadastro")
                         .HasColumnType("datetime2");
@@ -76,9 +78,6 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.Property<bool>("Ondeso")
                         .HasColumnType("bit");
 
-                    b.Property<int>("PacotesId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("UltimaAtualizacao")
                         .HasColumnType("datetime2");
 
@@ -91,9 +90,7 @@ namespace ControleMaquinasMx_Data.Migrations
                 {
                     b.HasOne("ControleMaquinasMx.Core.Models.Maquinas", "Maquinas")
                         .WithMany("Pacotes")
-                        .HasForeignKey("MaquinasId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("MaquinasId");
 
                     b.Navigation("Maquinas");
                 });

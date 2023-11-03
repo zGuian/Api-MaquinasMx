@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ControleMaquinasMx_Core.Models.Enum;
+using System.ComponentModel.DataAnnotations;
 
 namespace ControleMaquinasMx_CoreShared.MaquinasDtos
 {
@@ -14,9 +15,9 @@ namespace ControleMaquinasMx_CoreShared.MaquinasDtos
         public bool Ondeso { get; set; }
 
         [Required]
-        public byte Criticidade { get; set; }
+        public Criticidade Criticidade { get; set; }
 
         public DateTime? DataCadastro { get; }
-        public DateTime? UltimaAtualizacao => DateTime.Now.Date;
+        public DateTime? UltimaAtualizacao => DateTime.Now;
     }
 }

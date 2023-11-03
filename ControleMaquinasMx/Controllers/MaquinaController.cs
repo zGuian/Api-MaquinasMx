@@ -46,7 +46,7 @@ namespace ControleMaquinasMx.Controllers
             {
                 return NotFound("Não foi possivel cadastrar a maquina. Consulte os paramentros enviados: " + maquinaDto);
             }
-            return CreatedAtAction(nameof(BuscarMaquinaPorId), new { result.Id }, result);
+            return CreatedAtAction(nameof(AdicionarMaquinas), result);
         }
 
         [HttpPut("Update/{id}")]
@@ -55,7 +55,7 @@ namespace ControleMaquinasMx.Controllers
             var result = await _maquinasManager.UpdateMaquinasAsync(maquinasDto, id);
             if (result == null)
             {
-                return NotFound($"Não foi possivel atualizar a maquina. Id não encontrado: \nId enviado: {id}");
+                return NotFound($"Não foi possivel atualizar a maquina. Id não encontrado:\nId enviado: {id}");
             }
             return Ok(result);
         }

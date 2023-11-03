@@ -11,6 +11,8 @@ namespace ControleMaquinasMx.Configuration
         {
             services.AddScoped<IMaquinasRepository, MaquinasRepository>();
             services.AddScoped<IMaquinasManager, MaquinasManager>();
+            services.AddScoped<IPacotesRepository, PacotesRepository>();
+            services.AddScoped<IPacotesManager, PacotesManager>();
         }
     }
 }

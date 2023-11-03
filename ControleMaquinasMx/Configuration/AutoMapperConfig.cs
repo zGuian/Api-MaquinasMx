@@ -6,7 +6,6 @@ namespace ControleMaquinasMx.Configuration
     {
         public static void AddAutoMapperConfiguration(this IServiceCollection services)
         {
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddAutoMapper(typeof(MaquinaProfile), typeof(PacotesProfile));
         }
     }

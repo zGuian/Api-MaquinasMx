@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using ControleMaquinasMx.Core.Models;
-using ControleMaquinasMx_Core.Models;
 using ControleMaquinasMx_CoreShared.Dtos;
 using ControleMaquinasMx_CoreShared.MaquinasDtos;
 
@@ -10,12 +9,11 @@ namespace ControleMaquinasMx_Manager.Profiles
     {
         public MaquinaProfile()
         {
-            CreateMap<CreateMaquinasDto, Maquinas>()
-                .ForMember(dest => dest.Pacotes, opts => opts
-                .MapFrom(src => src.Pacotes));
-
-            CreateMap<Maquinas, ReadMaquinasDto>();
+            CreateMap<CreateMaquinasDto, Maquinas>();
             CreateMap<UpdateMaquinasDto, Maquinas>();
+            CreateMap<Maquinas, ReadMaquinasDto>()
+                .ForMember(maquinaDto => maquinaDto.Pacotes,
+                opts => opts.MapFrom(maquina => maquina.Pacotes));
         }
     }
 }
