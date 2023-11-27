@@ -22,3 +22,27 @@ C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Core\
 C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\refint\ControleMaquinasMx_Core.dll
 C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.pdb
 C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ref\ControleMaquinasMx_Core.dll
+C:\Users\fgb171\Desktop\C#_Projects\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\bin\Debug\net6.0\ControleMaquinasMx_Core.deps.json
+C:\Users\fgb171\Desktop\C#_Projects\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\bin\Debug\net6.0\ControleMaquinasMx_Core.dll
+C:\Users\fgb171\Desktop\C#_Projects\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\bin\Debug\net6.0\ControleMaquinasMx_Core.pdb
+C:\Users\fgb171\Desktop\C#_Projects\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.csproj.AssemblyReference.cache
+C:\Users\fgb171\Desktop\C#_Projects\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fgb171\Desktop\C#_Projects\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.AssemblyInfoInputs.cache
+C:\Users\fgb171\Desktop\C#_Projects\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.AssemblyInfo.cs
+C:\Users\fgb171\Desktop\C#_Projects\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.csproj.CoreCompileInputs.cache
+C:\Users\fgb171\Desktop\C#_Projects\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.dll
+C:\Users\fgb171\Desktop\C#_Projects\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\refint\ControleMaquinasMx_Core.dll
+C:\Users\fgb171\Desktop\C#_Projects\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.pdb
+C:\Users\fgb171\Desktop\C#_Projects\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ref\ControleMaquinasMx_Core.dll
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\bin\Debug\net6.0\ControleMaquinasMx_Core.deps.json
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\bin\Debug\net6.0\ControleMaquinasMx_Core.dll
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\bin\Debug\net6.0\ControleMaquinasMx_Core.pdb
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.AssemblyInfoInputs.cache
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.AssemblyInfo.cs
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.csproj.CoreCompileInputs.cache
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.dll
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\refint\ControleMaquinasMx_Core.dll
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.pdb
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ref\ControleMaquinasMx_Core.dll
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\obj\Debug\net6.0\ControleMaquinasMx_Core.sourcelink.json

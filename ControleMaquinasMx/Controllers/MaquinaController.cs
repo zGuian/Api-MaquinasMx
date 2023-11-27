@@ -1,7 +1,7 @@
-﻿using ControleMaquinasMx_CoreShared.Dtos;
-using ControleMaquinasMx_CoreShared.MaquinasDtos;
+﻿using Microsoft.AspNetCore.Mvc;
+using ControleMaquinasMx_CoreShared.Dtos;
 using ControleMaquinasMx_Manager.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+using ControleMaquinasMx_CoreShared.MaquinasDtos;
 
 namespace ControleMaquinasMx.Controllers
 {
@@ -10,26 +10,30 @@ namespace ControleMaquinasMx.Controllers
     public class MaquinaController : Controller
     {
         private readonly IMaquinasManager _maquinasManager;
+        private readonly ILogger<MaquinaController> _logger;
 
-        public MaquinaController(IMaquinasManager maquinasManager)
+        public MaquinaController(IMaquinasManager maquinasManager, ILogger<MaquinaController> logger)
         {
             _maquinasManager = maquinasManager;
+            _logger = logger;
         }
 
         [HttpGet]
         public async Task<IActionResult> BuscaTodasMaquinas()
         {
+            _logger.LogInformation("Foi solicitado um request de todas as maquinas cadastradas ");
             var result = await _maquinasManager.SearchMaquinasAsync();
             if (result == null)
             {
                 return NotFound("Não encontrado nenhuma maquina");
             }
-            return Ok(result);
+            return Ok(result.ToList());
         }
 
         [HttpGet("GetId/{id}")]
         public async Task<IActionResult> BuscarMaquinaPorId(int id)
         {
+            _logger.LogInformation($"Foi solicitado um request da máquina com seguinte ID: {id}");
             var result = await _maquinasManager.SearchMaquinasIdAsync(id);
             if (result == null)
             {
@@ -41,17 +45,20 @@ namespace ControleMaquinasMx.Controllers
         [HttpPost]
         public async Task<IActionResult> AdicionarMaquinas(CreateMaquinasDto maquinaDto)
         {
+            _logger.LogInformation("Foi requisitado um novo cadastro de maquinas.");
             var result = await _maquinasManager.InsertMaquinasAsync(maquinaDto);
             if (result == null)
             {
                 return NotFound("Não foi possivel cadastrar a maquina. Consulte os paramentros enviados: " + maquinaDto);
             }
-            return CreatedAtAction(nameof(AdicionarMaquinas), result);
+            var resp =  CreatedAtAction(nameof(BuscarMaquinaPorId), new { id = result.Id }, result);
+            return Ok(resp);
         }
 
         [HttpPut("Update/{id}")]
         public async Task<IActionResult> AtualizarMaquina([FromBody] UpdateMaquinasDto maquinasDto, int id)
         {
+            _logger.LogInformation("Solicitado atualização de maquinas");
             var result = await _maquinasManager.UpdateMaquinasAsync(maquinasDto, id);
             if (result == null)
             {

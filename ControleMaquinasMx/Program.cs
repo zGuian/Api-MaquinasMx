@@ -1,33 +1,40 @@
 using ControleMaquinasMx.Configuration;
-using Serilog;
 
-Log.Logger = new LoggerConfiguration()
-    .WriteTo.Console()
-    .CreateLogger();
+//{
+var ambiente = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json")
+    .AddJsonFile($"appsettings.{ambiente}.json")
+    .Build();
+//}
 
+//{
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddDataBaseConfiguration(builder);
 builder.Services.AddAutoMapperConfiguration();
 builder.Services.AddDependencyInjectionConfiguration();
 builder.Services.AddControllersConfiguration();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerConfiguration();
+builder.Services.AddCorsConfiguration();
+builder.Logging.ConfiguraLog(configuration);
+builder.Logging.ClearProvidersConfiguration();
+//}
 
+//{
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.AddSwaggerConfigurationApp();
 }
-if (app.Environment.IsProduction())
-{
-    app.UseDeveloperExceptionPage();
-}
 
+app.AppCorsConfiguration();
 app.UseDataBaseConfiguration();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
+//}

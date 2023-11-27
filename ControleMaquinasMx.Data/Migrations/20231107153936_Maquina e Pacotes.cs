@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ControleMaquinasMx_Data.Migrations
 {
-    public partial class Relacao1pM : Migration
+    public partial class MaquinaePacotes : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,7 +18,7 @@ namespace ControleMaquinasMx_Data.Migrations
                     Inventario = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Hostname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Ondeso = table.Column<bool>(type: "bit", nullable: false),
-                    Criticidade = table.Column<byte>(type: "tinyint", nullable: false),
+                    Criticidade = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UltimaAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -35,7 +35,7 @@ namespace ControleMaquinasMx_Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NomeKb = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MaquinasId = table.Column<int>(type: "int", nullable: true),
-                    DataInstalacao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataInstalacao = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -45,7 +45,8 @@ namespace ControleMaquinasMx_Data.Migrations
                         name: "FK_Pacotes_Maquinas_MaquinasId",
                         column: x => x.MaquinasId,
                         principalTable: "Maquinas",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

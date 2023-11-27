@@ -520,7 +520,8 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "ControleMaquinasMx_Core": "1.0.0",
-          "ControleMaquinasMx_CoreShared": "1.0.0"
+          "ControleMaquinasMx_CoreShared": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0"
         },
         "runtime": {
           "ControleMaquinasMx_Manager.dll": {}

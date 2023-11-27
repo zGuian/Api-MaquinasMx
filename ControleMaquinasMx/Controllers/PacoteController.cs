@@ -45,7 +45,8 @@ namespace ControleMaquinasMx.Controllers
             {
                 return NotFound("Não foi possivel cadastrar a maquina. Consulte os paramentros enviados: " + pacoteDto.NomeKb);
             }
-            return CreatedAtAction(nameof(AdicionaPacote), result);
+            var resp = CreatedAtAction(nameof(BuscaPacotesPorId), new { id = result.Id }, result);
+            return Ok(resp);
         }
 
         [HttpPut("Update/{id}")]

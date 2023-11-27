@@ -11,8 +11,8 @@ namespace ControleMaquinasMx.Data.Data
         {
         }
 
-        public DbSet<Maquinas> Maquinas { get; set; }
-        public DbSet<Pacotes> Pacotes { get; set; }
+        public DbSet<Maquinas>? Maquinas { get; set; }
+        public DbSet<Pacotes>? Pacotes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

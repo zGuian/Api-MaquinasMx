@@ -1,56 +1,75 @@
-﻿using ControleMaquinasMx.Core.Models;
+﻿using AutoMapper;
 using ControleMaquinasMx.Data.Data;
-using ControleMaquinasMx_Core.Interfaces;
+using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using ControleMaquinasMx.Core.Models;
+using ControleMaquinasMx_Core.Interfaces;
+using ControleMaquinasMx_CoreShared.Dtos;
+using ControleMaquinasMx_CoreShared.MaquinasDtos;
 
 namespace ControleMaquinasMx_Data.Repository
 {
     public class MaquinasRepository : IMaquinasRepository
     {
         private readonly AppDbContext _context;
+        private readonly ILogger<MaquinasRepository> _logger;
+        private readonly IMapper _mapper;
 
-        public MaquinasRepository(AppDbContext context)
+        public MaquinasRepository(AppDbContext context, ILogger<MaquinasRepository> 
+            logger, IMapper mapper)
         {
             _context = context;
+            _logger = logger;
+            _mapper = mapper;
         }
 
-        public async Task<IEnumerable<Maquinas>> SearchAllMaquinasAsync()
+        public async Task<IEnumerable<ReadMaquinasDto>> SearchAllMaquinasAsync()
         {
-            var maquinas = await _context.Maquinas.AsNoTracking()
-                                                  .ToListAsync();
-            int contagem = maquinas.Count;
+            var maquinas = await _context.Maquinas.Include(x => x.Pacotes)
+                .AsNoTracking().ToListAsync();
+            var contagem = maquinas.Count;
             if (contagem == 0)
             {
                 return null!;
             }
-            return maquinas;
+            var maquinasDto = _mapper.Map<List<ReadMaquinasDto>>(maquinas);
+            _logger.LogInformation($"Encontrado {contagem} maquinas");
+            _logger.LogInformation("Retornado maquinas a controller");
+            return maquinasDto;
         }
 
-        public async Task<Maquinas> SearchMaquinasByIdAsync(int id)
+        public async Task<ReadMaquinasDto> SearchMaquinasByIdAsync(int id)
         {
-            var maquinaId = await _context.Maquinas.SingleOrDefaultAsync(x => x.Id == id);
+            var maquinaId = await _context.Maquinas.Include(x => x.Pacotes)
+                .SingleOrDefaultAsync(x => x.Id == id);
             if (maquinaId == null)
             {
                 return null!;
             }
-            return maquinaId;
+            var maquinaDto = _mapper.Map<ReadMaquinasDto>(maquinaId);
+            _logger.LogInformation($"Retornando maquina do ID {id} a controller");
+            return maquinaDto;
         }
 
-        public async Task<Maquinas> InsertMaquinasAsync(Maquinas maquina)
+        public async Task<Maquinas> InsertMaquinasAsync(CreateMaquinasDto maquinaDto)
         {
+            var maquina = _mapper.Map<Maquinas>(maquinaDto);
             await _context.Maquinas.AddAsync(maquina);
             await _context.SaveChangesAsync();
+            _logger.LogInformation($"Registrado com sucesso no banco de dados");
             return maquina;
         }
 
-        public async Task<Maquinas> UpdateMaquinasAsync(Maquinas maquina, int id)
+        public async Task<Maquinas> UpdateMaquinasAsync(UpdateMaquinasDto maquinaDto, int id)
         {
             var maquinaId = await _context.Maquinas.FirstOrDefaultAsync(x => x.Id == id);
             if (maquinaId == null)
             {
                 return null!;
             }
+            _mapper.Map(maquinaDto, maquinaId);
             await _context.SaveChangesAsync();
+            _logger.LogInformation($"Atualizado com sucesso");
             return maquinaId;
         }
 
@@ -61,8 +80,9 @@ namespace ControleMaquinasMx_Data.Repository
             {
                 return false;
             }
-            _context.Remove(maquinaId);
+            _context.Maquinas.Remove(maquinaId);
             await _context.SaveChangesAsync();
+            _logger.LogInformation($"Maquina {maquinaId.Hostname} deletada com sucesso");
             return true;
         }
     }

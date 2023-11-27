@@ -1,20 +1,24 @@
-﻿using ControleMaquinasMx.Data.Data;
+﻿using AutoMapper;
+using ControleMaquinasMx.Data.Data;
+using Microsoft.EntityFrameworkCore;
 using ControleMaquinasMx_Core.Models;
 using ControleMaquinasMx_Manager.Interfaces;
-using Microsoft.EntityFrameworkCore;
+using ControleMaquinasMx_CoreShared.PacotesDtos;
 
 namespace ControleMaquinasMx_Data.Repository
 {
     public class PacotesRepository : IPacotesRepository
     {
         private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
 
-        public PacotesRepository(AppDbContext context)
+        public PacotesRepository(AppDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        public async Task<IEnumerable<Pacotes>> SearchAllPacotesAsync()
+        public async Task<IEnumerable<ReadPacotesDto>> SearchAllPacotesAsync()
         {
             var pacote = await _context.Pacotes.AsNoTracking()
                                                 .ToListAsync();
@@ -23,34 +27,37 @@ namespace ControleMaquinasMx_Data.Repository
             {
                 return null!;
             }
-            return pacote;
+            var pacoteDto = _mapper.Map<List<ReadPacotesDto>>(pacote);
+            return pacoteDto;
         }
 
-        public async Task<Pacotes> SearchPacotesByIdAsync(int id)
+        public async Task<ReadPacotesDto> SearchPacotesByIdAsync(int id)
         {
             var pacoteId = await _context.Pacotes.SingleOrDefaultAsync(x => x.Id == id);
             if (pacoteId == null)
             {
                 return null!;
             }
-            return pacoteId;
+            var pacoteDto = _mapper.Map<ReadPacotesDto>(pacoteId);
+            return pacoteDto;
         }
 
-        public async Task<Pacotes> InsertPacotesAsync(Pacotes pacote)
+        public async Task<Pacotes> InsertPacotesAsync(CreatePacotesDto pacoteDto)
         {
+            var pacote = _mapper.Map<Pacotes>(pacoteDto);
             await _context.Pacotes.AddAsync(pacote);
             await _context.SaveChangesAsync();
             return pacote;
         }
 
-        public async Task<Pacotes> UpdatePacotesAsync(Pacotes pacote, int id)
+        public async Task<Pacotes> UpdatePacotesAsync(UpdatePacotesDto pacoteDto, int id)
         {
             var pacoteId = await _context.Pacotes.FirstOrDefaultAsync(x => x.Id == id);
             if (pacoteId == null)
             {
                 return null!;
             }
-            _context.Update(pacoteId);
+            _mapper.Map(pacoteDto, pacoteId);
             await _context.SaveChangesAsync();
             return pacoteId;
         }

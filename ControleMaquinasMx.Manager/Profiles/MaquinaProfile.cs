@@ -12,8 +12,8 @@ namespace ControleMaquinasMx_Manager.Profiles
             CreateMap<CreateMaquinasDto, Maquinas>();
             CreateMap<UpdateMaquinasDto, Maquinas>();
             CreateMap<Maquinas, ReadMaquinasDto>()
-                .ForMember(maquinaDto => maquinaDto.Pacotes,
-                opts => opts.MapFrom(maquina => maquina.Pacotes));
+                .ForMember(maquinaDto => maquinaDto.Pacotes, opt => opt.MapFrom(maquina => maquina.Pacotes));
+            CreateMap<Maquinas, UpdateMaquinasDto>();
         }
     }
 }

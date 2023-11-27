@@ -1,7 +1,7 @@
 ﻿using ControleMaquinasMx_Core.Interfaces;
 using ControleMaquinasMx_Data.Repository;
-using ControleMaquinasMx_Manager.Implementation;
 using ControleMaquinasMx_Manager.Interfaces;
+using ControleMaquinasMx_Manager.Implementation;
 
 namespace ControleMaquinasMx.Configuration
 {

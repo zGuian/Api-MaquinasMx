@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ControleMaquinasMx_Core
-build_property.ProjectDir = C:\Users\fgb171\Desktop\C#_Projects\Controle_MaquinasMx\ControleMaquinasMx.Core\
+build_property.ProjectDir = C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx.Core\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿using Microsoft.Extensions.Logging;
 using ControleMaquinasMx_Core.Models;
 using ControleMaquinasMx_Manager.Interfaces;
 using ControleMaquinasMx_CoreShared.PacotesDtos;
@@ -8,36 +8,33 @@ namespace ControleMaquinasMx_Manager.Implementation
     public class PacotesManager : IPacotesManager
     {
         private readonly IPacotesRepository _pacotesRepository;
-        private readonly IMapper _mapper;
+        private readonly ILogger<PacotesManager> _logger;
 
-        public PacotesManager(IPacotesRepository pacotesRepository, IMapper mapper)
+        public PacotesManager(IPacotesRepository pacotesRepository, ILogger<PacotesManager> logger)
         {
             _pacotesRepository = pacotesRepository;
-            _mapper = mapper;
+            _logger = logger;
         }
 
         public async Task<IEnumerable<ReadPacotesDto>> SearchPacotesAsync()
         {
-            return _mapper.Map<List<ReadPacotesDto>>(
-                await _pacotesRepository.SearchAllPacotesAsync());
+            _logger.LogInformation($"BUSCANDO TODOS PACOTES");
+            return await _pacotesRepository.SearchAllPacotesAsync();
         }
 
         public async Task<ReadPacotesDto> SearchPacotesIdAsync(int id)
         {
-            var pacoteId = await _pacotesRepository.SearchPacotesByIdAsync(id);
-            return _mapper.Map<ReadPacotesDto>(pacoteId);
+            return await _pacotesRepository.SearchPacotesByIdAsync(id);
         }
 
-        public async Task<Pacotes> InsertPacotesAsync(CreatePacotesDto pacotesDto)
+        public async Task<Pacotes> InsertPacotesAsync(CreatePacotesDto pacoteDto)
         {
-            var pacote = _mapper.Map<Pacotes>(pacotesDto);
-            return await _pacotesRepository.InsertPacotesAsync(pacote);
+            return await _pacotesRepository.InsertPacotesAsync(pacoteDto);
         }
 
-        public async Task<Pacotes> UpdatePacotesAsync(UpdatePacotesDto pacotesDto, int id)
+        public async Task<Pacotes> UpdatePacotesAsync(UpdatePacotesDto pacoteDto, int id)
         {
-            var pacote = _mapper.Map<Pacotes>(pacotesDto);
-            return await _pacotesRepository.UpdatePacotesAsync(pacote, id);
+            return await _pacotesRepository.UpdatePacotesAsync(pacoteDto, id);
         }
 
         public async Task<bool> DeletePacoteAsync(int id)

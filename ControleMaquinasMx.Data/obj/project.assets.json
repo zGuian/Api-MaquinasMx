@@ -828,7 +828,8 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "ControleMaquinasMx_Core": "1.0.0",
-          "ControleMaquinasMx_CoreShared": "1.0.0"
+          "ControleMaquinasMx_CoreShared": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0"
         },
         "compile": {
           "bin/placeholder/ControleMaquinasMx_Manager.dll": {}
@@ -2106,11 +2107,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx.Data\\ControleMaquinasMx_Data.csproj",
+      "projectUniqueName": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Data\\ControleMaquinasMx_Data.csproj",
       "projectName": "ControleMaquinasMx_Data",
-      "projectPath": "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx.Data\\ControleMaquinasMx_Data.csproj",
+      "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Data\\ControleMaquinasMx_Data.csproj",
       "packagesPath": "C:\\Users\\fgb171\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx.Data\\obj\\",
+      "outputPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fgb171\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2127,11 +2128,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj": {
-              "projectPath": "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj"
+            "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj": {
+              "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj"
             },
-            "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx.Manager\\ControleMaquinasMx_Manager.csproj": {
-              "projectPath": "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx.Manager\\ControleMaquinasMx_Manager.csproj"
+            "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Manager\\ControleMaquinasMx_Manager.csproj": {
+              "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Manager\\ControleMaquinasMx_Manager.csproj"
             }
           }
         }
@@ -2183,7 +2184,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

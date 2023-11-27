@@ -12,8 +12,8 @@ namespace ControleMaquinasMx_Core.Models
         [Required]
         public string? NomeKb { get; set; }
         public int? MaquinasId { get; set; }
-        public Maquinas? Maquinas { get; set; }
-        public DateTime DataInstalacao { get; set; }
+        public virtual Maquinas? Maquinas { get; set; }
+        public DateTime? DataInstalacao { get; set; }
         public DateTime? DataAtualizacao { get; set; }
     }
 }

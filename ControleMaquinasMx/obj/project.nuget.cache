@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hoKdt02w6oje41jfMPj1flfaT8ZmuxKsGiQV1kYv/Z+HUDKnlm96IWJmnHNjbR2vrbjlj/s17Zup7R2ftGHkkA==",
+  "dgSpecHash": "ut0I1KTraLCve/Qh4ne3sQoQXWAUW/K4z7iTvX3xiXpAmCKDHGi/nM1VuUqHhUeWQuv4UslUaheWltRVfBfcRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fgb171\\Desktop\\C#_Projects\\Controle_MaquinasMx\\ControleMaquinasMx\\ControleMaquinasMx.csproj",
+  "projectFilePath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx\\ControleMaquinasMx.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fgb171\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -46,7 +46,8 @@
     "C:\\Users\\fgb171\\.nuget\\packages\\serilog.extensions.hosting\\7.0.0\\serilog.extensions.hosting.7.0.0.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\serilog.extensions.logging\\7.0.0\\serilog.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\serilog.formatting.compact\\1.1.0\\serilog.formatting.compact.1.1.0.nupkg.sha512",
-    "C:\\Users\\fgb171\\.nuget\\packages\\serilog.settings.configuration\\7.0.0\\serilog.settings.configuration.7.0.0.nupkg.sha512",
+    "C:\\Users\\fgb171\\.nuget\\packages\\serilog.settings.configuration\\7.0.1\\serilog.settings.configuration.7.0.1.nupkg.sha512",
+    "C:\\Users\\fgb171\\.nuget\\packages\\serilog.sinks.async\\1.5.0\\serilog.sinks.async.1.5.0.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\serilog.sinks.console\\4.0.1\\serilog.sinks.console.4.0.1.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\serilog.sinks.debug\\2.0.0\\serilog.sinks.debug.2.0.0.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",

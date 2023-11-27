@@ -7,7 +7,7 @@ namespace ControleMaquinasMx.Configuration
     {
         public static void AddDataBaseConfiguration(this IServiceCollection services, WebApplicationBuilder builder)
         {
-            services.AddDbContext<AppDbContext>(opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("AppDbContext")));
+            services.AddDbContext<AppDbContext>(opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("AppDbContext")!));
         }
 
         public static void UseDataBaseConfiguration(this IApplicationBuilder app)

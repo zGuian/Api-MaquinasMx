@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControleMaquinasMx_Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231103192044_Add Enum")]
-    partial class AddEnum
+    [Migration("20231107153936_Maquina e Pacotes")]
+    partial class MaquinaePacotes
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,7 +35,7 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.Property<DateTime?>("DataAtualizacao")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataInstalacao")
+                    b.Property<DateTime?>("DataInstalacao")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("MaquinasId")
@@ -90,7 +90,8 @@ namespace ControleMaquinasMx_Data.Migrations
                 {
                     b.HasOne("ControleMaquinasMx.Core.Models.Maquinas", "Maquinas")
                         .WithMany("Pacotes")
-                        .HasForeignKey("MaquinasId");
+                        .HasForeignKey("MaquinasId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Maquinas");
                 });

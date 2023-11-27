@@ -4,6 +4,5 @@
     {
         public string? NomeKb { get; set; }
         public DateTime? DataAtualização => DateTime.Now;
-        public int MaquinaId { get; set; }
     }
 }

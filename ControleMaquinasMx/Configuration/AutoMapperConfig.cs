@@ -1,4 +1,5 @@
-﻿using ControleMaquinasMx_Manager.Profiles;
+﻿using AutoMapper;
+using ControleMaquinasMx_Manager.Profiles;
 
 namespace ControleMaquinasMx.Configuration
 {
@@ -6,7 +7,14 @@ namespace ControleMaquinasMx.Configuration
     {
         public static void AddAutoMapperConfiguration(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(MaquinaProfile), typeof(PacotesProfile));
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MaquinaProfile());
+                mc.AddProfile(new PacotesProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
         }
     }
 }
