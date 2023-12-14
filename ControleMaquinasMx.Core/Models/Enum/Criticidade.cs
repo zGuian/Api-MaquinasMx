@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ControleMaquinasMx_Core.Models.Enum
+﻿namespace ControleMaquinasMx_Core.Models.Enum
 {
     public enum Criticidade : byte
     {

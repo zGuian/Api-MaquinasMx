@@ -5,10 +5,10 @@ namespace ControleMaquinasMx_Manager.Interfaces
 {
     public interface IPacotesManager
     {
-        Task<IEnumerable<ReadPacotesDto>> SearchPacotesAsync();
-        Task<ReadPacotesDto> SearchPacotesIdAsync(int id);
-        Task<Pacotes> InsertPacotesAsync(CreatePacotesDto pacotesDto);
-        Task<Pacotes> UpdatePacotesAsync(UpdatePacotesDto pacotesDto, int id);
+        Task<IEnumerable<PacoteViewDto>> SearchPacotesAsync();
+        Task<PacoteViewDto> SearchPacotesIdAsync(int id);
+        Task<Pacote> InsertPacotesAsync(NovoPacoteDto pacotesDto);
+        Task<Pacote> UpdatePacotesAsync(AlteraPacoteDto pacotesDto, int id);
         Task<bool> DeletePacoteAsync(int id);
     }
 }

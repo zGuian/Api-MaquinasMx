@@ -1,6 +1,8 @@
-﻿using ControleMaquinasMx_CoreShared.PacotesDtos;
+﻿using Microsoft.AspNetCore.Mvc;
 using ControleMaquinasMx_Manager.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+using ControleMaquinasMx_CoreShared.PacotesDtos;
+using Microsoft.AspNetCore.Authorization;
+using ControleMaquinasMx_CoreShared.MaquinasDtos;
 
 namespace ControleMaquinasMx.Controllers
 {
@@ -16,6 +18,11 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrator, Comum, Visualizador")]
+        [ProducesResponseType(typeof(PacoteViewDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> BuscaTodosPacotes()
         {
             var result = await _pacotesManager.SearchPacotesAsync();
@@ -27,6 +34,11 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpGet("GetId/{id}")]
+        [Authorize(Roles = "Administrator, Comum, Visualizador")]
+        [ProducesResponseType(typeof(PacoteViewDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> BuscaPacotesPorId(int id)
         {
             var result = await _pacotesManager.SearchPacotesIdAsync(id);
@@ -38,7 +50,12 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AdicionaPacote([FromBody] CreatePacotesDto pacoteDto)
+        [Authorize(Roles = "Administrator, Comum")]
+        [ProducesResponseType(typeof(PacoteViewDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> AdicionaPacote([FromBody] NovoPacoteDto pacoteDto)
         {
             var result = await _pacotesManager.InsertPacotesAsync(pacoteDto);
             if (result == null)
@@ -50,7 +67,12 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpPut("Update/{id}")]
-        public async Task<IActionResult> AtualizarPacote([FromBody] UpdatePacotesDto pacoteDto, int id)
+        [Authorize(Roles = "Administrator")]
+        [ProducesResponseType(typeof(PacoteViewDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> AtualizarPacote([FromBody] AlteraPacoteDto pacoteDto, int id)
         {
             var result = await _pacotesManager.UpdatePacotesAsync(pacoteDto, id);
             if (result == null)
@@ -61,6 +83,11 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpDelete]
+        [Authorize(Roles = "Administrator")]
+        [ProducesResponseType(typeof(PacoteViewDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeletePacote(int id)
         {
             var result = await _pacotesManager.DeletePacoteAsync(id);

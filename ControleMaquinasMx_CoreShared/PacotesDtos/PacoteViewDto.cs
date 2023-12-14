@@ -1,19 +1,22 @@
 ﻿using ControleMaquinasMx.Core.Models;
-using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
-namespace ControleMaquinasMx_Core.Models
+namespace ControleMaquinasMx_CoreShared.PacotesDtos
 {
-    public class Pacotes
+    public class PacoteViewDto : ICloneable
     {
-        [Key]
-        [Required]
         public int Id { get; set; }
-
-        [Required]
         public string? NomeKb { get; set; }
         public int? MaquinasId { get; set; }
-        public virtual Maquinas? Maquinas { get; set; }
         public DateTime? DataInstalacao { get; set; }
         public DateTime? DataAtualizacao { get; set; }
+
+        [JsonIgnore]
+        public Maquina? Maquinas { get; set; }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
     }
 }

@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ControleMaquinasMx_Data.Configuration
 {
-    internal class PacotesConfiguration : IEntityTypeConfiguration<Pacotes>
+    internal class PacotesConfiguration : IEntityTypeConfiguration<Pacote>
     {
-        public void Configure(EntityTypeBuilder<Pacotes> builder)
+        public void Configure(EntityTypeBuilder<Pacote> builder)
         { 
             builder.HasOne(x => x.Maquinas)
                 .WithMany(x => x.Pacotes)

@@ -1,16 +1,25 @@
 ﻿using ControleMaquinasMx.Core.Models;
 using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ControleMaquinasMx_CoreShared.PacotesDtos
+namespace ControleMaquinasMx_Core.Models
 {
-    public class ReadPacotesDto
+    public class Pacote
     {
+        [Key]
+        [Required]
         public int Id { get; set; }
+
+        [Required]
         public string? NomeKb { get; set; }
+
+        [ForeignKey("MaquinasId")]
         public int? MaquinasId { get; set; }
+
+        [JsonIgnore]
+        public virtual Maquina? Maquinas { get; set; }
         public DateTime? DataInstalacao { get; set; }
         public DateTime? DataAtualizacao { get; set; }
-        [JsonIgnore]
-        public Maquinas? Maquinas { get; set; }
     }
 }

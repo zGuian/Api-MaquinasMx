@@ -8,9 +8,10 @@ namespace ControleMaquinasMx_Manager.Profiles
     {
         public PacotesProfile()
         {
-            CreateMap<CreatePacotesDto, Pacotes>();
-            CreateMap<Pacotes, ReadPacotesDto>();
-            CreateMap<UpdatePacotesDto, Pacotes>();
+            CreateMap<Pacote, NovoPacoteDto>().ReverseMap();
+            CreateMap<Pacote, PacoteViewDto>().ReverseMap();
+            CreateMap<Pacote, AlteraPacoteDto>().ReverseMap();
+            CreateMap<PacoteViewDto, AlteraPacoteDto>().ReverseMap();
         }
     }
 }

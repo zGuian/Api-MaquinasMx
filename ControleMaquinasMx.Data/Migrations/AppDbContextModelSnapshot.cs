@@ -22,7 +22,7 @@ namespace ControleMaquinasMx_Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacotes", b =>
+            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacote", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,7 +50,38 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.ToTable("Pacotes");
                 });
 
-            modelBuilder.Entity("ControleMaquinasMx.Core.Models.Maquinas", b =>
+            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Permissao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Permissoes");
+                });
+
+            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Usuario", b =>
+                {
+                    b.Property<string>("Login")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Login");
+
+                    b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("ControleMaquinasMx.Core.Models.Maquina", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,9 +115,24 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.ToTable("Maquinas");
                 });
 
-            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacotes", b =>
+            modelBuilder.Entity("PermissaoUsuario", b =>
                 {
-                    b.HasOne("ControleMaquinasMx.Core.Models.Maquinas", "Maquinas")
+                    b.Property<int>("PermissaoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UsuariosLogin")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("PermissaoId", "UsuariosLogin");
+
+                    b.HasIndex("UsuariosLogin");
+
+                    b.ToTable("PermissaoUsuario");
+                });
+
+            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacote", b =>
+                {
+                    b.HasOne("ControleMaquinasMx.Core.Models.Maquina", "Maquinas")
                         .WithMany("Pacotes")
                         .HasForeignKey("MaquinasId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -94,7 +140,22 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.Navigation("Maquinas");
                 });
 
-            modelBuilder.Entity("ControleMaquinasMx.Core.Models.Maquinas", b =>
+            modelBuilder.Entity("PermissaoUsuario", b =>
+                {
+                    b.HasOne("ControleMaquinasMx_Core.Models.Permissao", null)
+                        .WithMany()
+                        .HasForeignKey("PermissaoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ControleMaquinasMx_Core.Models.Usuario", null)
+                        .WithMany()
+                        .HasForeignKey("UsuariosLogin")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ControleMaquinasMx.Core.Models.Maquina", b =>
                 {
                     b.Navigation("Pacotes");
                 });

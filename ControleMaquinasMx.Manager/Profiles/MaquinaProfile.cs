@@ -9,11 +9,14 @@ namespace ControleMaquinasMx_Manager.Profiles
     {
         public MaquinaProfile()
         {
-            CreateMap<CreateMaquinasDto, Maquinas>();
-            CreateMap<UpdateMaquinasDto, Maquinas>();
-            CreateMap<Maquinas, ReadMaquinasDto>()
-                .ForMember(maquinaDto => maquinaDto.Pacotes, opt => opt.MapFrom(maquina => maquina.Pacotes));
-            CreateMap<Maquinas, UpdateMaquinasDto>();
+            CreateMap<NovaMaquinaDto, Maquina>();
+            CreateMap<AlteraMaquinaDto, Maquina>();
+            CreateMap<Maquina, AlteraMaquinaDto>();
+            CreateMap<Maquina, MaquinaViewDto>()
+                .ForMember(maquinaDto => maquinaDto.Pacotes, opt => opt.MapFrom(maquina => maquina.Pacotes))
+                .ReverseMap();
+            //CreateMap<Maquina, ReadMaquinasDto>()
+            //    .ForMember(maquinaDto => maquinaDto.Pacotes, opt => opt.MapFrom(maquina => maquina.Pacotes));
         }
     }
 }

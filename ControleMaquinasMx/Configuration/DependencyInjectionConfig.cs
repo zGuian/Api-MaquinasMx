@@ -2,6 +2,7 @@
 using ControleMaquinasMx_Data.Repository;
 using ControleMaquinasMx_Manager.Interfaces;
 using ControleMaquinasMx_Manager.Implementation;
+using ControleMaquinasMx_Data.Services;
 
 namespace ControleMaquinasMx.Configuration
 {
@@ -13,6 +14,8 @@ namespace ControleMaquinasMx.Configuration
             services.AddScoped<IMaquinasManager, MaquinasManager>();
             services.AddScoped<IPacotesRepository, PacotesRepository>();
             services.AddScoped<IPacotesManager, PacotesManager>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IUsuarioManager, UsuarioManager>();
         }
     }
 }
