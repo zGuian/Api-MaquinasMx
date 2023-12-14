@@ -8,9 +8,10 @@ namespace ControleMaquinasMx_Manager.Profiles
     {
         public PacotesProfile()
         {
-            CreateMap<CreatePacotesDto, Pacotes>();
-            CreateMap<Pacotes, ReadPacotesDto>();
-            CreateMap<UpdatePacotesDto, Pacotes>();
+            CreateMap<NovoPacoteDto, Pacote>();
+            CreateMap<Pacote, PacoteViewDto>();
+            CreateMap<UpdatePacotesDto, Pacote>();
+            CreateMap<Pacote, UpdatePacotesDto>();
         }
     }
 }

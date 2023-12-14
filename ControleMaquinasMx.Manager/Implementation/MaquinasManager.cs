@@ -1,4 +1,5 @@
-﻿using ControleMaquinasMx.Core.Models;
+﻿using AutoMapper;
+using ControleMaquinasMx.Core.Models;
 using ControleMaquinasMx_Core.Interfaces;
 using ControleMaquinasMx_CoreShared.Dtos;
 using ControleMaquinasMx_CoreShared.MaquinasDtos;
@@ -11,35 +12,39 @@ namespace ControleMaquinasMx_Manager.Implementation
     {
         private readonly IMaquinasRepository _maquinasRepository;
         private readonly ILogger<MaquinasManager> _logger;
+        private readonly IMapper _mapper;
 
-        public MaquinasManager(IMaquinasRepository maquinasRepository, ILogger<MaquinasManager> logger)
+        public MaquinasManager(IMaquinasRepository maquinasRepository, IMapper mapper, ILogger<MaquinasManager> logger)
         {
             _maquinasRepository = maquinasRepository;
+            _mapper = mapper;
             _logger = logger;
         }
 
-        public async Task<IEnumerable<ReadMaquinasDto>> SearchMaquinasAsync()
+        public async Task<IEnumerable<MaquinaViewDto>> SearchMaquinasAsync()
         {
             _logger.LogInformation("Realizando busca de todas maquinas");
             return await _maquinasRepository.SearchAllMaquinasAsync();
         }
 
-        public async Task<ReadMaquinasDto> SearchMaquinasIdAsync(int id)
+        public async Task<MaquinaViewDto> SearchMaquinasAsync(int id)
         {
             _logger.LogInformation($"Iniciado busca do id {id} no banco de dados");
             return await _maquinasRepository.SearchMaquinasByIdAsync(id);
         }
 
-        public async Task<Maquinas> InsertMaquinasAsync(CreateMaquinasDto maquinaDto)
+        public async Task<MaquinaViewDto> InsertMaquinasAsync(NovaMaquinaDto maquinaDto)
         {
             _logger.LogInformation($"Realizando incerção no banco de dados");
-            return await _maquinasRepository.InsertMaquinasAsync(maquinaDto);
+            var maquina = _mapper.Map<Maquina>(maquinaDto);
+            return _mapper.Map<MaquinaViewDto>(await _maquinasRepository.InsertMaquinasAsync(maquina));
         }
 
-        public async Task<Maquinas> UpdateMaquinasAsync(UpdateMaquinasDto maquinaDto, int id)
+        public async Task<MaquinaViewDto> UpdateMaquinasAsync(AlteraMaquinaDto maquinaDto, int id)
         {
             _logger.LogInformation($"Iniciando processo para atualização de informações no banco de dados");
-            return await _maquinasRepository.UpdateMaquinasAsync(maquinaDto, id);
+            var maquina = _mapper.Map<Maquina>(maquinaDto);
+            return _mapper.Map<MaquinaViewDto>(await _maquinasRepository.UpdateMaquinasAsync(maquinaDto, id));
         }
 
         public async Task<bool> DeleteMaquinasAsync(int id)

@@ -18,7 +18,7 @@ namespace ControleMaquinasMx_Data.Repository
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<ReadPacotesDto>> SearchAllPacotesAsync()
+        public async Task<IEnumerable<PacoteViewDto>> SearchAllPacotesAsync()
         {
             var pacote = await _context.Pacotes.AsNoTracking()
                                                 .ToListAsync();
@@ -27,30 +27,30 @@ namespace ControleMaquinasMx_Data.Repository
             {
                 return null!;
             }
-            var pacoteDto = _mapper.Map<List<ReadPacotesDto>>(pacote);
+            var pacoteDto = _mapper.Map<List<PacoteViewDto>>(pacote);
             return pacoteDto;
         }
 
-        public async Task<ReadPacotesDto> SearchPacotesByIdAsync(int id)
+        public async Task<PacoteViewDto> SearchPacotesByIdAsync(int id)
         {
             var pacoteId = await _context.Pacotes.SingleOrDefaultAsync(x => x.Id == id);
             if (pacoteId == null)
             {
                 return null!;
             }
-            var pacoteDto = _mapper.Map<ReadPacotesDto>(pacoteId);
+            var pacoteDto = _mapper.Map<PacoteViewDto>(pacoteId);
             return pacoteDto;
         }
 
-        public async Task<Pacotes> InsertPacotesAsync(CreatePacotesDto pacoteDto)
+        public async Task<Pacote> InsertPacotesAsync(NovoPacoteDto pacoteDto)
         {
-            var pacote = _mapper.Map<Pacotes>(pacoteDto);
+            var pacote = _mapper.Map<Pacote>(pacoteDto);
             await _context.Pacotes.AddAsync(pacote);
             await _context.SaveChangesAsync();
             return pacote;
         }
 
-        public async Task<Pacotes> UpdatePacotesAsync(UpdatePacotesDto pacoteDto, int id)
+        public async Task<Pacote> UpdatePacotesAsync(UpdatePacotesDto pacoteDto, int id)
         {
             var pacoteId = await _context.Pacotes.FirstOrDefaultAsync(x => x.Id == id);
             if (pacoteId == null)

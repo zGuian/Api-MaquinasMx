@@ -23,7 +23,7 @@ namespace ControleMaquinasMx_Data.Repository
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<ReadMaquinasDto>> SearchAllMaquinasAsync()
+        public async Task<IEnumerable<MaquinaViewDto>> SearchAllMaquinasAsync()
         {
             var maquinas = await _context.Maquinas.Include(x => x.Pacotes)
                 .AsNoTracking().ToListAsync();
@@ -32,13 +32,13 @@ namespace ControleMaquinasMx_Data.Repository
             {
                 return null!;
             }
-            var maquinasDto = _mapper.Map<List<ReadMaquinasDto>>(maquinas);
+            var maquinasDto = _mapper.Map<List<MaquinaViewDto>>(maquinas);
             _logger.LogInformation($"Encontrado {contagem} maquinas");
             _logger.LogInformation("Retornado maquinas a controller");
             return maquinasDto;
         }
 
-        public async Task<ReadMaquinasDto> SearchMaquinasByIdAsync(int id)
+        public async Task<MaquinaViewDto> SearchMaquinasByIdAsync(int id)
         {
             var maquinaId = await _context.Maquinas.Include(x => x.Pacotes)
                 .SingleOrDefaultAsync(x => x.Id == id);
@@ -46,21 +46,20 @@ namespace ControleMaquinasMx_Data.Repository
             {
                 return null!;
             }
-            var maquinaDto = _mapper.Map<ReadMaquinasDto>(maquinaId);
+            var maquinaDto = _mapper.Map<MaquinaViewDto>(maquinaId);
             _logger.LogInformation($"Retornando maquina do ID {id} a controller");
             return maquinaDto;
         }
 
-        public async Task<Maquinas> InsertMaquinasAsync(CreateMaquinasDto maquinaDto)
+        public async Task<Maquina> InsertMaquinasAsync(Maquina maquina)
         {
-            var maquina = _mapper.Map<Maquinas>(maquinaDto);
             await _context.Maquinas.AddAsync(maquina);
             await _context.SaveChangesAsync();
             _logger.LogInformation($"Registrado com sucesso no banco de dados");
             return maquina;
         }
 
-        public async Task<Maquinas> UpdateMaquinasAsync(UpdateMaquinasDto maquinaDto, int id)
+        public async Task<Maquina> UpdateMaquinasAsync(AlteraMaquinaDto maquinaDto, int id)
         {
             var maquinaId = await _context.Maquinas.FirstOrDefaultAsync(x => x.Id == id);
             if (maquinaId == null)

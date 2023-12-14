@@ -6,10 +6,10 @@ namespace ControleMaquinasMx_Manager.Interfaces
 {
     public interface IMaquinasManager
     {
-        Task<IEnumerable<ReadMaquinasDto>> SearchMaquinasAsync();
-        Task<ReadMaquinasDto> SearchMaquinasIdAsync(int id);
-        Task<Maquinas> InsertMaquinasAsync(CreateMaquinasDto maquinas);
-        Task<Maquinas> UpdateMaquinasAsync(UpdateMaquinasDto maquinas, int id);
+        Task<IEnumerable<MaquinaViewDto>> SearchMaquinasAsync();
+        Task<MaquinaViewDto> SearchMaquinasAsync(int id);
+        Task<MaquinaViewDto> InsertMaquinasAsync(NovaMaquinaDto maquinas);
+        Task<MaquinaViewDto> UpdateMaquinasAsync(AlteraMaquinaDto maquinas, int id);
         Task<bool> DeleteMaquinasAsync(int id);
     }
 }

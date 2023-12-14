@@ -14,8 +14,8 @@ namespace ControleMaquinasMx.Configuration
         {
             using var serviceScoped = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
             using var context = serviceScoped.ServiceProvider.GetService<AppDbContext>();
-            //context.Database.Migrate();
-            //context.Database.EnsureCreatedAsync().Wait();
+            context.Database.Migrate();
+            context.Database.EnsureCreatedAsync().Wait();
         }
     }
 }

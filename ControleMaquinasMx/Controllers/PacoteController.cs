@@ -1,6 +1,7 @@
-﻿using ControleMaquinasMx_CoreShared.PacotesDtos;
+﻿using Microsoft.AspNetCore.Mvc;
 using ControleMaquinasMx_Manager.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+using ControleMaquinasMx_CoreShared.PacotesDtos;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ControleMaquinasMx.Controllers
 {
@@ -26,6 +27,7 @@ namespace ControleMaquinasMx.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [HttpGet("GetId/{id}")]
         public async Task<IActionResult> BuscaPacotesPorId(int id)
         {
@@ -37,8 +39,9 @@ namespace ControleMaquinasMx.Controllers
             return Ok(result);
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
-        public async Task<IActionResult> AdicionaPacote([FromBody] CreatePacotesDto pacoteDto)
+        public async Task<IActionResult> AdicionaPacote([FromBody] NovoPacoteDto pacoteDto)
         {
             var result = await _pacotesManager.InsertPacotesAsync(pacoteDto);
             if (result == null)
@@ -49,6 +52,7 @@ namespace ControleMaquinasMx.Controllers
             return Ok(resp);
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpPut("Update/{id}")]
         public async Task<IActionResult> AtualizarPacote([FromBody] UpdatePacotesDto pacoteDto, int id)
         {
@@ -60,6 +64,7 @@ namespace ControleMaquinasMx.Controllers
             return Ok(result);
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpDelete]
         public async Task<IActionResult> DeletePacote(int id)
         {

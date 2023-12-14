@@ -1,7 +1,7 @@
-﻿using ControleMaquinasMx.Core.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using ControleMaquinasMx.Core.Models;
 using ControleMaquinasMx_Core.Models;
 using ControleMaquinasMx_Data.Configuration;
-using Microsoft.EntityFrameworkCore;
 
 namespace ControleMaquinasMx.Data.Data
 {
@@ -11,8 +11,10 @@ namespace ControleMaquinasMx.Data.Data
         {
         }
 
-        public DbSet<Maquinas>? Maquinas { get; set; }
-        public DbSet<Pacotes>? Pacotes { get; set; }
+        public DbSet<Maquina> Maquinas { get; set; }
+        public DbSet<Pacote> Pacotes { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Permissao> Permissoes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -20,6 +22,7 @@ namespace ControleMaquinasMx.Data.Data
 
             modelBuilder.ApplyConfiguration(new MaquinasConfiguration());
             modelBuilder.ApplyConfiguration(new PacotesConfiguration());
+            modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
         }
     }
 }

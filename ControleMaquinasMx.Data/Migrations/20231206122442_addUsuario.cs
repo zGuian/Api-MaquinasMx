@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ControleMaquinasMx_Data.Migrations
 {
-    public partial class MaquinaePacotes : Migration
+    public partial class addUsuario : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,6 +25,18 @@ namespace ControleMaquinasMx_Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Maquinas", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Usuarios",
+                columns: table => new
+                {
+                    Login = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Senha = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuarios", x => x.Login);
                 });
 
             migrationBuilder.CreateTable(
@@ -59,6 +71,9 @@ namespace ControleMaquinasMx_Data.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Pacotes");
+
+            migrationBuilder.DropTable(
+                name: "Usuarios");
 
             migrationBuilder.DropTable(
                 name: "Maquinas");

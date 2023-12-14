@@ -11,9 +11,10 @@ namespace ControleMaquinasMx.Configuration
             {
                 mc.AddProfile(new MaquinaProfile());
                 mc.AddProfile(new PacotesProfile());
+                mc.AddProfile(new UsuarioProfile());
             });
 
-            IMapper mapper = mappingConfig.CreateMapper();
+            var mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
         }
     }

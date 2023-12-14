@@ -16,23 +16,23 @@ namespace ControleMaquinasMx_Manager.Implementation
             _logger = logger;
         }
 
-        public async Task<IEnumerable<ReadPacotesDto>> SearchPacotesAsync()
+        public async Task<IEnumerable<PacoteViewDto>> SearchPacotesAsync()
         {
             _logger.LogInformation($"BUSCANDO TODOS PACOTES");
             return await _pacotesRepository.SearchAllPacotesAsync();
         }
 
-        public async Task<ReadPacotesDto> SearchPacotesIdAsync(int id)
+        public async Task<PacoteViewDto> SearchPacotesIdAsync(int id)
         {
             return await _pacotesRepository.SearchPacotesByIdAsync(id);
         }
 
-        public async Task<Pacotes> InsertPacotesAsync(CreatePacotesDto pacoteDto)
+        public async Task<Pacote> InsertPacotesAsync(NovoPacoteDto pacoteDto)
         {
             return await _pacotesRepository.InsertPacotesAsync(pacoteDto);
         }
 
-        public async Task<Pacotes> UpdatePacotesAsync(UpdatePacotesDto pacoteDto, int id)
+        public async Task<Pacote> UpdatePacotesAsync(UpdatePacotesDto pacoteDto, int id)
         {
             return await _pacotesRepository.UpdatePacotesAsync(pacoteDto, id);
         }

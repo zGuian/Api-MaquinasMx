@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControleMaquinasMx_Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231107153936_Maquina e Pacotes")]
-    partial class MaquinaePacotes
+    [Migration("20231206122442_addUsuario")]
+    partial class addUsuario
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,7 @@ namespace ControleMaquinasMx_Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacotes", b =>
+            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacote", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,7 +52,20 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.ToTable("Pacotes");
                 });
 
-            modelBuilder.Entity("ControleMaquinasMx.Core.Models.Maquinas", b =>
+            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Usuario", b =>
+                {
+                    b.Property<string>("Login")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Senha")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Login");
+
+                    b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("ControleMaquinasMx.Core.Models.Maquina", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -86,9 +99,9 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.ToTable("Maquinas");
                 });
 
-            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacotes", b =>
+            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacote", b =>
                 {
-                    b.HasOne("ControleMaquinasMx.Core.Models.Maquinas", "Maquinas")
+                    b.HasOne("ControleMaquinasMx.Core.Models.Maquina", "Maquinas")
                         .WithMany("Pacotes")
                         .HasForeignKey("MaquinasId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -96,7 +109,7 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.Navigation("Maquinas");
                 });
 
-            modelBuilder.Entity("ControleMaquinasMx.Core.Models.Maquinas", b =>
+            modelBuilder.Entity("ControleMaquinasMx.Core.Models.Maquina", b =>
                 {
                     b.Navigation("Pacotes");
                 });

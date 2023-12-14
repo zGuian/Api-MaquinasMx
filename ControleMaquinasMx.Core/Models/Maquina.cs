@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ControleMaquinasMx.Core.Models
 {
-    public class Maquinas
+    public class Maquina
     {
         [Key]
         [Required]
@@ -29,6 +29,6 @@ namespace ControleMaquinasMx.Core.Models
         [DisplayFormat(DataFormatString = "{0:/dd/MM/yyyy HH:mm}")]
         [DataType(DataType.DateTime)]
         public DateTime? UltimaAtualizacao { get; set; }
-        public virtual ICollection<Pacotes>? Pacotes { get; set; }
+        public virtual ICollection<Pacote>? Pacotes { get; set; }
     }
 }
