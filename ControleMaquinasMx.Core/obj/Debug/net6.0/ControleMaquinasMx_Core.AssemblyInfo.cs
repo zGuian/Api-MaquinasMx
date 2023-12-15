@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ControleMaquinasMx_Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3941f2f2d09ed3e72b962970376908e1eddf0c04")]
+>>>>>>> 794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad
 [assembly: System.Reflection.AssemblyProductAttribute("ControleMaquinasMx_Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ControleMaquinasMx_Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -50,7 +50,11 @@ namespace ControleMaquinasMx_Data.Repository
             return pacote;
         }
 
+<<<<<<< HEAD
         public async Task<Pacote> UpdatePacotesAsync(AlteraPacoteDto pacoteDto, int id)
+=======
+        public async Task<Pacote> UpdatePacotesAsync(UpdatePacotesDto pacoteDto, int id)
+>>>>>>> 794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad
         {
             var pacoteId = await _context.Pacotes.FirstOrDefaultAsync(x => x.Id == id);
             if (pacoteId == null)

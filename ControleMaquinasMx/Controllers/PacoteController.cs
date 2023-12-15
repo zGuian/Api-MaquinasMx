@@ -1,8 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ControleMaquinasMx_Manager.Interfaces;
-using ControleMaquinasMx_CoreShared.PacotesDtos;
-using Microsoft.AspNetCore.Authorization;
-using ControleMaquinasMx_CoreShared.MaquinasDtos;
 
 namespace ControleMaquinasMx.Controllers
 {
@@ -33,6 +29,7 @@ namespace ControleMaquinasMx.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [HttpGet("GetId/{id}")]
         [Authorize(Roles = "Administrator, Comum, Visualizador")]
         [ProducesResponseType(typeof(PacoteViewDto), StatusCodes.Status200OK)]
@@ -49,13 +46,9 @@ namespace ControleMaquinasMx.Controllers
             return Ok(result);
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
-        [Authorize(Roles = "Administrator, Comum")]
-        [ProducesResponseType(typeof(PacoteViewDto), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> AdicionaPacote([FromBody] NovoPacoteDto pacoteDto)
+        public async Task<IActionResult> AdicionaPacote([FromBody] CreatePacotesDto pacoteDto)
         {
             var result = await _pacotesManager.InsertPacotesAsync(pacoteDto);
             if (result == null)
@@ -66,6 +59,7 @@ namespace ControleMaquinasMx.Controllers
             return Ok(resp);
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpPut("Update/{id}")]
         [Authorize(Roles = "Administrator")]
         [ProducesResponseType(typeof(PacoteViewDto), StatusCodes.Status200OK)]
@@ -82,6 +76,7 @@ namespace ControleMaquinasMx.Controllers
             return Ok(result);
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpDelete]
         [Authorize(Roles = "Administrator")]
         [ProducesResponseType(typeof(PacoteViewDto), StatusCodes.Status200OK)]

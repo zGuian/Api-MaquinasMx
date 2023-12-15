@@ -32,7 +32,11 @@ namespace ControleMaquinasMx_Manager.Implementation
             return await _pacotesRepository.InsertPacotesAsync(pacoteDto);
         }
 
+<<<<<<< HEAD
         public async Task<Pacote> UpdatePacotesAsync(AlteraPacoteDto pacoteDto, int id)
+=======
+        public async Task<Pacote> UpdatePacotesAsync(UpdatePacotesDto pacoteDto, int id)
+>>>>>>> 794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad
         {
             return await _pacotesRepository.UpdatePacotesAsync(pacoteDto, id);
         }

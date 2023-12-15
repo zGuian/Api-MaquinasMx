@@ -14,16 +14,23 @@ namespace ControleMaquinasMx.Configuration
                     {
                         Title = "Gerenciamento de maquinas MX",
                         Version = "v1",
+<<<<<<< HEAD
                         Description = "API da aplicação de gerenciamento de maquinas MX.",
+=======
+                        Description = "API aplicação de gerenciamento de maquinas MX.",
+>>>>>>> 794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad
                         Contact = new OpenApiContact
                         {
                             Name = "Guian Rocha",
                             Email = "guian.rocha@t-systems.com"
                         },
                     });
+<<<<<<< HEAD
                 //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 //c.IncludeXmlComments(xmlPath);
+=======
+>>>>>>> 794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
@@ -46,6 +53,15 @@ namespace ControleMaquinasMx.Configuration
                     }
                 });
                 c.OperationFilter<ConflictingActionsResolver>();
+<<<<<<< HEAD
+=======
+
+                //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                //c.IncludeXmlComments(xmlPath);
+                //xmlPath = Path.Combine(AppContext.BaseDirectory, "ControleMaquinasMx_CoreShared.xml");
+                //c.IncludeXmlComments(xmlPath);
+>>>>>>> 794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad
             });
         }
 

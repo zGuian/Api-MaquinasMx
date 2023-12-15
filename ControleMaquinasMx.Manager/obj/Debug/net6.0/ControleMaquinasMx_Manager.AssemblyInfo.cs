@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ControleMaquinasMx_Manager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ControleMaquinasMx_Manager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ControleMaquinasMx_Manager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,8 +1,5 @@
 ﻿using ControleMaquinasMx_CoreShared.Dtos;
 using ControleMaquinasMx_CoreShared.MaquinasDtos;
-using ControleMaquinasMx_Manager.Interfaces;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 
 namespace ControleMaquinasMx.Controllers
 {
@@ -20,11 +17,6 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Administrator, Comum, Visualizador")]
-        [ProducesResponseType(typeof(MaquinaViewDto), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> BuscaTodasMaquinas()
         {
             _logger.LogInformation("Foi solicitado um request de todas as maquinas cadastradas ");
@@ -37,11 +29,6 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpGet("GetId/{id}")]
-        [Authorize(Roles = "Administrator, Comum, Visualizador")]
-        [ProducesResponseType(typeof(MaquinaViewDto), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> BuscarMaquinaPorId(int id)
         {
             _logger.LogInformation($"Foi solicitado um request da máquina com seguinte ID: {id}");
@@ -54,12 +41,7 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Administrator, Comum")]
-        [ProducesResponseType(typeof(MaquinaViewDto), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> AdicionarMaquinas(NovaMaquinaDto maquinaDto)
+        public async Task<IActionResult> AdicionarMaquinas(CreateMaquinasDto maquinaDto)
         {
             _logger.LogInformation("Foi requisitado um novo cadastro de maquinas.");
             var result = await _maquinasManager.InsertMaquinasAsync(maquinaDto);
@@ -72,12 +54,7 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpPut("Update/{id}")]
-        [Authorize(Roles = "Administrator")]
-        [ProducesResponseType(typeof(MaquinaViewDto), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> AtualizarMaquina([FromBody] AlteraMaquinaDto maquinasDto, int id)
+        public async Task<IActionResult> AtualizarMaquina([FromBody] UpdateMaquinasDto maquinasDto, int id)
         {
             _logger.LogInformation("Solicitado atualização de maquinas");
             var result = await _maquinasManager.UpdateMaquinasAsync(maquinasDto, id);
@@ -89,11 +66,6 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpDelete]
-        [Authorize(Roles = "Administrator")]
-        [ProducesResponseType(typeof(MaquinaViewDto), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Delete(int id)
         {
             var result = await _maquinasManager.DeleteMaquinasAsync(id);
