@@ -23,12 +23,10 @@ builder.Services.AddEndpointsApiExplorer();
 
 
 var app = builder.Build();
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.AddSwaggerConfigurationApp();
 }
-
 app.AppCorsConfiguration();
 app.UseDataBaseConfiguration();
 app.UseHttpsRedirection();

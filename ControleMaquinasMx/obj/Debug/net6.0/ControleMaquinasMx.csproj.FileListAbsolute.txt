@@ -306,3 +306,5 @@ C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaqui
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\GraphQL.dll
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\GraphQLParser.dll

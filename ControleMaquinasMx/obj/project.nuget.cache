@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "fWRZAomDOBlDNJAJ1Wn9E1/CTS132bhUt2t/vB7KDRn/5E6Ni4d9UMCl/CUfe0h4/s0OJNXBTFUKR6MBVIfufQ==",
+  "dgSpecHash": "qAGtn34GDrxfqV9oY53O5cURLfrZ8SIhqziNdqy0JPC+JAclre9CPBDyZ21toSIYgKYJ1fJY5SshxczuKhFFoA==",
   "success": true,
   "projectFilePath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx\\ControleMaquinasMx.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fgb171\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\fgb171\\.nuget\\packages\\graphql\\7.7.2\\graphql.7.7.2.nupkg.sha512",
+    "C:\\Users\\fgb171\\.nuget\\packages\\graphql-parser\\8.4.2\\graphql-parser.8.4.2.nupkg.sha512",
+    "C:\\Users\\fgb171\\.nuget\\packages\\graphql.analyzers\\7.7.2\\graphql.analyzers.7.7.2.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.25\\microsoft.aspnetcore.authentication.jwtbearer.6.0.25.nupkg.sha512",
     "C:\\Users\\fgb171\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.22\\microsoft.aspnetcore.cryptography.internal.6.0.22.nupkg.sha512",

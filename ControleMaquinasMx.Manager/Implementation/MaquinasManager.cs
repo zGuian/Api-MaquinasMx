@@ -43,7 +43,7 @@ namespace ControleMaquinasMx_Manager.Implementation
         public async Task<MaquinaViewDto> UpdateMaquinasAsync(AlteraMaquinaDto maquinaDto, int id)
         {
             _logger.LogInformation($"Iniciando processo para atualização de informações no banco de dados");
-            var maquina = _mapper.Map<Maquina>(maquinaDto);
+            _mapper.Map<Maquina>(maquinaDto);
             return _mapper.Map<MaquinaViewDto>(await _maquinasRepository.UpdateMaquinasAsync(maquinaDto, id));
         }
 

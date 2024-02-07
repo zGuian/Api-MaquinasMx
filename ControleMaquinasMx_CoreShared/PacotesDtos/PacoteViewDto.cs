@@ -11,12 +11,14 @@ namespace ControleMaquinasMx_CoreShared.PacotesDtos
         public DateTime? DataInstalacao { get; set; }
         public DateTime? DataAtualizacao { get; set; }
 
-        [JsonIgnore]
-        public Maquina? Maquinas { get; set; }
-
         public object Clone()
         {
             return MemberwiseClone();
+        }
+
+        public PacoteViewDto CloneTipado()
+        {
+            return (PacoteViewDto)Clone();
         }
     }
 }

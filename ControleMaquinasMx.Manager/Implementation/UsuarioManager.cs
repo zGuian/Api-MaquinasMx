@@ -1,15 +1,9 @@
 ﻿using AutoMapper;
-<<<<<<< HEAD
 using ControleMaquinasMx_Core.Models;
 using ControleMaquinasMx_CoreShared.UsuarioDtos;
 using ControleMaquinasMx_Manager.Interfaces;
 using ControleMaquinasMx_Manager.Security;
-=======
 using Microsoft.AspNetCore.Identity;
-using ControleMaquinasMx_Core.Models;
-using ControleMaquinasMx_Manager.Interfaces;
-using ControleMaquinasMx_CoreShared.UsuarioDtos;
->>>>>>> 794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad
 
 namespace ControleMaquinasMx_Manager.Implementation
 {
@@ -39,30 +33,14 @@ namespace ControleMaquinasMx_Manager.Implementation
         public async Task<UsuarioViewDto> InsertAsync(NovoUsuarioDto novoUsuario)
         {
             var user = _mapper.Map<Usuario>(novoUsuario);
-<<<<<<< HEAD
             ServiceSecurity.ConvertSenhaEmHash(user);
-=======
-            ConvertSenhaEmHash(user);
->>>>>>> 794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad
             user = await _repository.CreateUserAsync(user);
             return _mapper.Map<UsuarioViewDto>(user);
         }
 
-<<<<<<< HEAD
         public async Task<UsuarioViewDto> UpdateAsync(Usuario usuario)
         {
             ServiceSecurity.ConvertSenhaEmHash(usuario);
-=======
-        public void ConvertSenhaEmHash(Usuario usuario)
-        {
-            var senhaHasher = new PasswordHasher<Usuario>();
-            usuario.Senha = senhaHasher.HashPassword(usuario, usuario.Senha);
-        }
-
-        public async Task<UsuarioViewDto> UpdateAsync(Usuario usuario)
-        {
-            ConvertSenhaEmHash(usuario);
->>>>>>> 794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad
             return _mapper.Map<UsuarioViewDto>(await _repository.UpdateUserAsync(usuario));
         }
 
@@ -73,11 +51,7 @@ namespace ControleMaquinasMx_Manager.Implementation
             {
                 return null!;
             }
-<<<<<<< HEAD
             var temp = await ServiceSecurity.ValidaAtualizaHashAsync(usuario, userConsultado.Senha);
-=======
-            var temp = await ValidaAtualizaHashAsync(usuario, userConsultado.Senha);
->>>>>>> 794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad
             if (temp)
             {
                 var userLogado = _mapper.Map<UsuarioLogadoDto>(userConsultado);
@@ -87,8 +61,6 @@ namespace ControleMaquinasMx_Manager.Implementation
             return null!;
         }
 
-<<<<<<< HEAD
-=======
         public async Task<bool> ValidaAtualizaHashAsync(Usuario usuario, string hash)
         {
             var passwordHasher = new PasswordHasher<Usuario>();
@@ -107,15 +79,11 @@ namespace ControleMaquinasMx_Manager.Implementation
             }
         }
 
->>>>>>> 794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad
         public async Task<AtualizaUsuarioDto> RecuperaSenhaAsync(AtualizaUsuarioDto usuario)
         {
             var userConvert = _mapper.Map<Usuario>(usuario);
             await _repository.RecuperaUserAsync(userConvert);
-<<<<<<< HEAD
             await ValidaUserGeraTokenAsync(userConvert);
-=======
->>>>>>> 794a33a3b7cfbc18145de5b9a53a2f8c0ec6efad
             return _mapper.Map<AtualizaUsuarioDto>(userConvert);
         }
     }

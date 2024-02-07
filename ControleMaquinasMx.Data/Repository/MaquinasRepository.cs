@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
-using ControleMaquinasMx.Data.Data;
-using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
 using ControleMaquinasMx.Core.Models;
+using ControleMaquinasMx.Data.Data;
 using ControleMaquinasMx_Core.Interfaces;
-using ControleMaquinasMx_CoreShared.Dtos;
 using ControleMaquinasMx_CoreShared.MaquinasDtos;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace ControleMaquinasMx_Data.Repository
 {
@@ -15,7 +14,7 @@ namespace ControleMaquinasMx_Data.Repository
         private readonly ILogger<MaquinasRepository> _logger;
         private readonly IMapper _mapper;
 
-        public MaquinasRepository(AppDbContext context, ILogger<MaquinasRepository> 
+        public MaquinasRepository(AppDbContext context, ILogger<MaquinasRepository>
             logger, IMapper mapper)
         {
             _context = context;
@@ -28,13 +27,14 @@ namespace ControleMaquinasMx_Data.Repository
             var maquinas = await _context.Maquinas.Include(x => x.Pacotes)
                 .AsNoTracking().ToListAsync();
             var contagem = maquinas.Count;
+            _logger.LogInformation($"Foi encontrado {contagem} maquinas");
             if (contagem == 0)
             {
+                _logger.LogInformation($"Retornando nenhuma maquina para a controller");
                 return null!;
             }
             var maquinasDto = _mapper.Map<List<MaquinaViewDto>>(maquinas);
-            _logger.LogInformation($"Encontrado {contagem} maquinas");
-            _logger.LogInformation("Retornado maquinas a controller");
+            _logger.LogInformation($"Retornado a quantidade de {contagem} para controller");
             return maquinasDto;
         }
 
@@ -66,7 +66,7 @@ namespace ControleMaquinasMx_Data.Repository
             {
                 return null!;
             }
-            _mapper.Map(maquinaDto, maquinaId);
+            _context.Update(maquinaId).CurrentValues.SetValues(maquinaDto);
             await _context.SaveChangesAsync();
             _logger.LogInformation($"Atualizado com sucesso");
             return maquinaId;

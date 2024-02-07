@@ -1,11 +1,13 @@
 ﻿using ControleMaquinasMx_CoreShared.Dtos;
 using ControleMaquinasMx_CoreShared.MaquinasDtos;
+using ControleMaquinasMx_Manager.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ControleMaquinasMx.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class MaquinaController : Controller
+    public class MaquinaController : ControllerBase
     {
         private readonly IMaquinasManager _maquinasManager;
         private readonly ILogger<MaquinaController> _logger;
@@ -41,7 +43,7 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AdicionarMaquinas(CreateMaquinasDto maquinaDto)
+        public async Task<IActionResult> AdicionarMaquinas(NovaMaquinaDto maquinaDto)
         {
             _logger.LogInformation("Foi requisitado um novo cadastro de maquinas.");
             var result = await _maquinasManager.InsertMaquinasAsync(maquinaDto);
@@ -49,18 +51,17 @@ namespace ControleMaquinasMx.Controllers
             {
                 return BadRequest("Não foi possivel cadastrar a maquina. Consulte os paramentros enviados: " + maquinaDto);
             }
-            var resp = CreatedAtAction(nameof(BuscarMaquinaPorId), new { id = result.Id }, result);
-            return Ok(resp);
+            return CreatedAtAction(nameof(BuscarMaquinaPorId), new { id = result.Id }, result);
         }
 
         [HttpPut("Update/{id}")]
-        public async Task<IActionResult> AtualizarMaquina([FromBody] UpdateMaquinasDto maquinasDto, int id)
+        public async Task<IActionResult> AtualizarMaquina([FromBody] AlteraMaquinaDto maquinasDto, int id)
         {
             _logger.LogInformation("Solicitado atualização de maquinas");
             var result = await _maquinasManager.UpdateMaquinasAsync(maquinasDto, id);
             if (result == null)
             {
-                return NotFound($"Não foi possivel atualizar a maquina. Id não encontrado:\nId enviado: {id}");
+                return NotFound($"Não foi possivel atualizar a maquina. Id não encontrado\nId enviado: {id}");
             }
             return Ok(result);
         }
@@ -68,10 +69,11 @@ namespace ControleMaquinasMx.Controllers
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
+            _logger.LogInformation("Solicitando delete de maquina");
             var result = await _maquinasManager.DeleteMaquinasAsync(id);
             if (result == false)
             {
-                return NotFound("Não foi possivel deletar a maquina. Id não encontrado");
+                return NotFound($"Não foi possivel deletar a maquina. Id não encontrado\nId enviado: {id}");
             }
             return Ok("Maquina excluida com sucesso");
         }

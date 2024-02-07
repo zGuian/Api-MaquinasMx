@@ -11,6 +11,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "ControleMaquinasMx_Data": "1.0.0",
           "ControleMaquinasMx_Manager": "1.0.0",
+          "GraphQL": "7.7.2",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.25",
           "Microsoft.EntityFrameworkCore": "6.0.22",
           "Microsoft.EntityFrameworkCore.Design": "6.0.22",
@@ -48,6 +49,27 @@
           }
         }
       },
+      "GraphQL/7.7.2": {
+        "dependencies": {
+          "GraphQL-Parser": "8.4.2",
+          "GraphQL.Analyzers": "7.7.2"
+        },
+        "runtime": {
+          "lib/net6.0/GraphQL.dll": {
+            "assemblyVersion": "7.7.2.0",
+            "fileVersion": "7.7.2.0"
+          }
+        }
+      },
+      "GraphQL-Parser/8.4.2": {
+        "runtime": {
+          "lib/net6.0/GraphQLParser.dll": {
+            "assemblyVersion": "8.4.2.0",
+            "fileVersion": "8.4.2.0"
+          }
+        }
+      },
+      "GraphQL.Analyzers/7.7.2": {},
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -861,6 +883,27 @@
       "sha512": "sha512-+g/K+Vpe3gGMKGzjslMOdqNlkikScDjWfVvmWTayrDHaG/n2pPmFBMa+jKX1r/h6BDGFdkyRjAuhFE3ykW+r1g==",
       "path": "automapper.extensions.microsoft.dependencyinjection/12.0.1",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512"
+    },
+    "GraphQL/7.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DHSRGNsBqJOk9SL+oFnpjTaPxt2/iWBpOitBT3MWLvUMAaQqQusnvwU+orG07wz8MSSrZbApJyqc0qwD7Fk1YQ==",
+      "path": "graphql/7.7.2",
+      "hashPath": "graphql.7.7.2.nupkg.sha512"
+    },
+    "GraphQL-Parser/8.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lztBQaZaq2g98w2XVSv3Y635AEwk/m6gwlvgmLxfIGxngpklaPSXWEIgCXcCv803qAXvUUTbvaVXuteyQdyVjw==",
+      "path": "graphql-parser/8.4.2",
+      "hashPath": "graphql-parser.8.4.2.nupkg.sha512"
+    },
+    "GraphQL.Analyzers/7.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bKUnbn0eIEFNJu1qMATJ4DAF93WGjLq8KuOx0y+/a989tlO/+M0J6JaQaW0Yuc1o6scmVNuDQzM21L333FAwuA==",
+      "path": "graphql.analyzers/7.7.2",
+      "hashPath": "graphql.analyzers.7.7.2.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

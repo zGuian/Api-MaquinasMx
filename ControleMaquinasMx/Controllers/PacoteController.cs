@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ControleMaquinasMx_CoreShared.PacotesDtos;
+using ControleMaquinasMx_Manager.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ControleMaquinasMx.Controllers
 {
@@ -14,7 +17,7 @@ namespace ControleMaquinasMx.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Administrator, Comum, Visualizador")]
+        //[Authorize(Roles = "Administrator, Comum, Visualizador")]
         [ProducesResponseType(typeof(PacoteViewDto), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
@@ -31,7 +34,7 @@ namespace ControleMaquinasMx.Controllers
 
         [Authorize]
         [HttpGet("GetId/{id}")]
-        [Authorize(Roles = "Administrator, Comum, Visualizador")]
+        //[Authorize(Roles = "Administrator, Comum, Visualizador")]
         [ProducesResponseType(typeof(PacoteViewDto), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
@@ -46,9 +49,9 @@ namespace ControleMaquinasMx.Controllers
             return Ok(result);
         }
 
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         [HttpPost]
-        public async Task<IActionResult> AdicionaPacote([FromBody] CreatePacotesDto pacoteDto)
+        public async Task<IActionResult> AdicionaPacote([FromBody] NovoPacoteDto pacoteDto)
         {
             var result = await _pacotesManager.InsertPacotesAsync(pacoteDto);
             if (result == null)
@@ -59,7 +62,7 @@ namespace ControleMaquinasMx.Controllers
             return Ok(resp);
         }
 
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         [HttpPut("Update/{id}")]
         [Authorize(Roles = "Administrator")]
         [ProducesResponseType(typeof(PacoteViewDto), StatusCodes.Status200OK)]
@@ -76,9 +79,8 @@ namespace ControleMaquinasMx.Controllers
             return Ok(result);
         }
 
-        [Authorize(Roles = "Administrator")]
         [HttpDelete]
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         [ProducesResponseType(typeof(PacoteViewDto), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]

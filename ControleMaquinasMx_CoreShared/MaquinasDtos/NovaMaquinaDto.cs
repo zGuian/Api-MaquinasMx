@@ -1,5 +1,4 @@
 ﻿using ControleMaquinasMx_Core.Models.Enum;
-using ControleMaquinasMx_CoreShared.PacotesDtos;
 using System.ComponentModel.DataAnnotations;
 
 namespace ControleMaquinasMx_CoreShared.Dtos
@@ -36,7 +35,11 @@ namespace ControleMaquinasMx_CoreShared.Dtos
         /// <example>C</example>
         [Required(ErrorMessage = "Defina uma criticidade para maquina")]
         public Criticidade Criticidade { get; set; }
+
+        /// <summary>
+        /// Data que cadastrou a maquina
+        /// </summary>
+        /// <value>Sera sera a data atual</value>
         public DateTime DataCadastro => DateTime.Now;
-        public ICollection<NovoPacoteDto> Pacotes { get; set; }
     }
 }

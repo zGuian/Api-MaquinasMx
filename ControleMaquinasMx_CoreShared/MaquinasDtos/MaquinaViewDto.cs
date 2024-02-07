@@ -3,6 +3,9 @@ using ControleMaquinasMx_CoreShared.PacotesDtos;
 
 namespace ControleMaquinasMx_CoreShared.MaquinasDtos
 {
+    /// <summary>
+    /// Objeto utilizado para visualizar maquina
+    /// </summary>
     public class MaquinaViewDto : ICloneable
     {
         public int Id { get; set; }

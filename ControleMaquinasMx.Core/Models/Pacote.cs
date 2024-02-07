@@ -1,5 +1,4 @@
 ﻿using ControleMaquinasMx.Core.Models;
-using System.Text.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,8 +15,6 @@ namespace ControleMaquinasMx_Core.Models
 
         [ForeignKey("MaquinasId")]
         public int? MaquinasId { get; set; }
-
-        [JsonIgnore]
         public virtual Maquina? Maquinas { get; set; }
         public DateTime? DataInstalacao { get; set; }
         public DateTime? DataAtualizacao { get; set; }
