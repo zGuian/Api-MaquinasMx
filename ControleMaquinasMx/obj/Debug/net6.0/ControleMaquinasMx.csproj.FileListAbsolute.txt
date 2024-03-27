@@ -281,7 +281,13 @@ C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaqui
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\ControleMaquinasMx_Data.dll
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\ControleMaquinasMx_Domain.dll
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\ControleMaquinasMx_DomainShared.dll
+<<<<<<< HEAD
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\ControleMaquinasMx_Data.pdb
+=======
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\ControleMaquinasMx_Manager.dll
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\ControleMaquinasMx_Data.pdb
+C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\ControleMaquinasMx_Manager.pdb
+>>>>>>> 308e5005a50f7d6fde5093bb06843c7b21726ab4
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\ControleMaquinasMx_Domain.pdb
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\ControleMaquinasMx_DomainShared.pdb
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\obj\Debug\net6.0\ControleMaquinasMx.csproj.AssemblyReference.cache
@@ -306,5 +312,8 @@ C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaqui
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\obj\Debug\net6.0\ControleMaquinasMx.pdb
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\obj\Debug\net6.0\ControleMaquinasMx.genruntimeconfig.cache
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\obj\Debug\net6.0\ref\ControleMaquinasMx.dll
+<<<<<<< HEAD
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\ControleMaquinasMx_Application.dll
 C:\ProjetosDev\[PROJETO] ControleMaquinasMx\Api_ControleMaquinasMx\ControleMaquinasMx\bin\Debug\net6.0\ControleMaquinasMx_Application.pdb
+=======
+>>>>>>> 308e5005a50f7d6fde5093bb06843c7b21726ab4

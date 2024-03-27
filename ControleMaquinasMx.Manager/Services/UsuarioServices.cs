@@ -1,8 +1,13 @@
 ﻿using AutoMapper;
 using ControleMaquinasMx_Domain.Entities;
 using ControleMaquinasMx_DomainShared.UsuarioDtos;
+<<<<<<< HEAD:ControleMaquinasMx.Manager/Services/UsuarioServices.cs
 using ControleMaquinasMx_Application.Interfaces;
 using ControleMaquinasMx_Application.Security;
+=======
+using ControleMaquinasMx_Manager.Interfaces;
+using ControleMaquinasMx_Manager.Security;
+>>>>>>> 308e5005a50f7d6fde5093bb06843c7b21726ab4:ControleMaquinasMx.Manager/Implementation/UsuarioManager.cs
 using Microsoft.AspNetCore.Identity;
 
 namespace ControleMaquinasMx_Application.Services

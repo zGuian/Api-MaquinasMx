@@ -517,7 +517,18 @@
           "ControleMaquinasMx_DomainShared.dll": {}
         }
       },
+<<<<<<< HEAD
       "ControleMaquinasMx_Application/1.0.0.0": {
+=======
+      "ControleMaquinasMx_Manager/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "12.0.1",
+          "ControleMaquinasMx_Domain": "1.0.0",
+          "ControleMaquinasMx_DomainShared": "1.0.0",
+          "Microsoft.Extensions.Identity.Core": "6.0.22",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0"
+        },
+>>>>>>> 308e5005a50f7d6fde5093bb06843c7b21726ab4
         "runtime": {
           "ControleMaquinasMx_Application.dll": {
             "assemblyVersion": "1.0.0.0",

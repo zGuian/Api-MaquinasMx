@@ -1,5 +1,5 @@
-﻿using ControleMaquinasMx_Domain.Entities;
-using ControleMaquinasMx_Application.Interfaces;
+﻿using ControleMaquinasMx_Core.Models;
+using ControleMaquinasMx_Manager.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;

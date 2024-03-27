@@ -826,16 +826,29 @@
           }
         }
       },
+      "ControleMaquinasMx_Core/1.0.0": {
+        "runtime": {
+          "ControleMaquinasMx_Core.dll": {}
+        }
+      },
+      "ControleMaquinasMx_CoreShared/1.0.0": {
+        "dependencies": {
+          "ControleMaquinasMx_Core": "1.0.0"
+        },
+        "runtime": {
+          "ControleMaquinasMx_CoreShared.dll": {}
+        }
+      },
       "ControleMaquinasMx_Data/1.0.0": {
         "dependencies": {
-          "ControleMaquinasMx_Domain": "1.0.0",
+          "ControleMaquinasMx_Core": "1.0.0",
           "ControleMaquinasMx_Manager": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.25",
           "Microsoft.EntityFrameworkCore": "6.0.22",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.22"
         },
         "runtime": {
-          "ControleMaquinasMx_Data.dll": {}
+          "ControleMaquinasMx_DomainShared.dll": {}
         }
       },
       "ControleMaquinasMx_Domain/1.0.0": {
@@ -845,13 +858,12 @@
       },
       "ControleMaquinasMx_DomainShared/1.0.0": {
         "dependencies": {
-          "ControleMaquinasMx_Domain": "1.0.0"
+          "AutoMapper": "12.0.1",
+          "ControleMaquinasMx_Core": "1.0.0",
+          "ControleMaquinasMx_CoreShared": "1.0.0",
+          "Microsoft.Extensions.Identity.Core": "6.0.22",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
         },
-        "runtime": {
-          "ControleMaquinasMx_DomainShared.dll": {}
-        }
-      },
-      "ControleMaquinasMx_Application/1.0.0.0": {
         "runtime": {
           "ControleMaquinasMx_Application.dll": {
             "assemblyVersion": "1.0.0.0",

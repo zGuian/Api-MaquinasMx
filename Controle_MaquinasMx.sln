@@ -26,8 +26,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleMaquinaMx_Testes", "ControleMaquinaMx_Testes\ControleMaquinaMx_Testes.csproj", "{BBA632A6-3A76-41BC-8065-714A1AD11153}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleMaquinasMx_FakeData", "ControleMaquinasMx_FakeData\ControleMaquinasMx_FakeData.csproj", "{304AFB2C-2DDD-46A4-A7AE-1509A96A80C1}"
+<<<<<<< HEAD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1BCC55EB-0943-43B4-BDAC-90454A8C8F9F}"
+=======
+>>>>>>> 308e5005a50f7d6fde5093bb06843c7b21726ab4
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
