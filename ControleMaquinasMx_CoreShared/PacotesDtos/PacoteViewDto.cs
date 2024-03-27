@@ -1,7 +1,4 @@
-﻿using ControleMaquinasMx.Core.Models;
-using System.Text.Json.Serialization;
-
-namespace ControleMaquinasMx_CoreShared.PacotesDtos
+﻿namespace ControleMaquinasMx_DomainShared.PacotesDtos
 {
     public class PacoteViewDto : ICloneable
     {

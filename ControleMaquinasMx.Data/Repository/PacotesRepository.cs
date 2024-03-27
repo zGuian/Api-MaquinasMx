@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using ControleMaquinasMx.Data.Data;
-using Microsoft.EntityFrameworkCore;
-using ControleMaquinasMx_Core.Models;
+using ControleMaquinasMx_Domain.Entities;
+using ControleMaquinasMx_DomainShared.PacotesDtos;
 using ControleMaquinasMx_Manager.Interfaces;
-using ControleMaquinasMx_CoreShared.PacotesDtos;
+using Microsoft.EntityFrameworkCore;
 
 namespace ControleMaquinasMx_Data.Repository
 {

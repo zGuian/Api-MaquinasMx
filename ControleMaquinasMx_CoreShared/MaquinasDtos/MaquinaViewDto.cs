@@ -1,7 +1,7 @@
-﻿using ControleMaquinasMx_Core.Models.Enum;
-using ControleMaquinasMx_CoreShared.PacotesDtos;
+﻿using ControleMaquinasMx_Domain.Entities.Enum;
+using ControleMaquinasMx_DomainShared.PacotesDtos;
 
-namespace ControleMaquinasMx_CoreShared.MaquinasDtos
+namespace ControleMaquinasMx_DomainShared.MaquinasDtos
 {
     /// <summary>
     /// Objeto utilizado para visualizar maquina

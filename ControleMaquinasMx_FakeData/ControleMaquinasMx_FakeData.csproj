@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ControleMaquinasMx_CoreShared\ControleMaquinasMx_CoreShared.csproj" />
+    <ProjectReference Include="..\ControleMaquinasMx_CoreShared\ControleMaquinasMx_DomainShared.csproj" />
   </ItemGroup>
 
 </Project>

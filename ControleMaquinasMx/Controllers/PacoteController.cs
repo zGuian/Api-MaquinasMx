@@ -1,4 +1,4 @@
-﻿using ControleMaquinasMx_CoreShared.PacotesDtos;
+﻿using ControleMaquinasMx_DomainShared.PacotesDtos;
 using ControleMaquinasMx_Manager.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

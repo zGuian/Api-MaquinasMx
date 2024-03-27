@@ -24,7 +24,7 @@ namespace ControleMaquinasMx_Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacote", b =>
+            modelBuilder.Entity("ControleMaquinasMx_Domain.Models.Pacote", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,7 +52,7 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.ToTable("Pacotes");
                 });
 
-            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Usuario", b =>
+            modelBuilder.Entity("ControleMaquinasMx_Domain.Models.Usuario", b =>
                 {
                     b.Property<string>("Login")
                         .HasColumnType("nvarchar(450)");
@@ -99,7 +99,7 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.ToTable("Maquinas");
                 });
 
-            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacote", b =>
+            modelBuilder.Entity("ControleMaquinasMx_Domain.Models.Pacote", b =>
                 {
                     b.HasOne("ControleMaquinasMx.Core.Models.Maquina", "Maquinas")
                         .WithMany("Pacotes")

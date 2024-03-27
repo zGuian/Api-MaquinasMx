@@ -1,7 +1,4 @@
-﻿using ControleMaquinasMx_Core.Models.Enum;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace ControleMaquinasMx_Core.Models
+﻿namespace ControleMaquinasMx_Domain.Entities
 {
     public class Permissao
     {

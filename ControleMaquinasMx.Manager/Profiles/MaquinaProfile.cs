@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
-using ControleMaquinasMx.Core.Models;
-using ControleMaquinasMx_CoreShared.Dtos;
-using ControleMaquinasMx_CoreShared.MaquinasDtos;
+using ControleMaquinasMx_Domain.Entities;
+using ControleMaquinasMx_DomainShared.MaquinasDtos;
 
 namespace ControleMaquinasMx_Manager.Profiles
 {

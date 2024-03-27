@@ -1,4 +1,4 @@
-﻿using ControleMaquinasMx_Core.Interfaces;
+﻿using ControleMaquinasMx_Domain.Interfaces;
 using ControleMaquinasMx_Data.Repository;
 using ControleMaquinasMx_Manager.Interfaces;
 using ControleMaquinasMx_Manager.Implementation;

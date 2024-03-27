@@ -19,13 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleMaquinasMx_Data", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleMaquinasMx_Manager", "ControleMaquinasMx.Manager\ControleMaquinasMx_Manager.csproj", "{4B358B83-A5E3-44B7-AE83-7CDB55CE8A4E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleMaquinasMx_Core", "ControleMaquinasMx.Core\ControleMaquinasMx_Core.csproj", "{C5E5F3FE-1ED5-4E19-AC87-F6F4D0B57854}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleMaquinasMx_Domain", "ControleMaquinasMx.Core\ControleMaquinasMx_Domain.csproj", "{C5E5F3FE-1ED5-4E19-AC87-F6F4D0B57854}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleMaquinasMx_CoreShared", "ControleMaquinasMx_CoreShared\ControleMaquinasMx_CoreShared.csproj", "{392D0982-7D8C-4A6C-A94C-001A16875B9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleMaquinasMx_DomainShared", "ControleMaquinasMx_CoreShared\ControleMaquinasMx_DomainShared.csproj", "{392D0982-7D8C-4A6C-A94C-001A16875B9D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleMaquinaMx_Testes", "ControleMaquinaMx_Testes\ControleMaquinaMx_Testes.csproj", "{BBA632A6-3A76-41BC-8065-714A1AD11153}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleMaquinasMx_FakeData", "ControleMaquinasMx_FakeData\ControleMaquinasMx_FakeData.csproj", "{304AFB2C-2DDD-46A4-A7AE-1509A96A80C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleMaquinasMx_FakeData", "ControleMaquinasMx_FakeData\ControleMaquinasMx_FakeData.csproj", "{304AFB2C-2DDD-46A4-A7AE-1509A96A80C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,6 @@
-﻿using ControleMaquinasMx_Core.Models.Enum;
+﻿using ControleMaquinasMx_Domain.Entities.Enum;
 
-namespace ControleMaquinasMx_CoreShared.MaquinasDtos
+namespace ControleMaquinasMx_DomainShared.MaquinasDtos
 {
     /// <summary>
     /// Objeto utilizado para alterar valores da maquina

@@ -1,5 +1,5 @@
-﻿using ControleMaquinasMx.Core.Models;
-using ControleMaquinasMx_Core.Models.Enum;
+﻿using ControleMaquinasMx_Domain.Entities;
+using ControleMaquinasMx_Domain.Entities.Enum;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

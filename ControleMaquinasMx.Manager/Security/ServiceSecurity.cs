@@ -1,4 +1,4 @@
-﻿using ControleMaquinasMx_Core.Models;
+﻿using ControleMaquinasMx_Domain.Entities;
 using ControleMaquinasMx_Manager.Interfaces;
 using Microsoft.AspNetCore.Identity;
 

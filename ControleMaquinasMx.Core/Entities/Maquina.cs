@@ -1,8 +1,7 @@
-﻿using ControleMaquinasMx_Core.Models;
-using ControleMaquinasMx_Core.Models.Enum;
+﻿using ControleMaquinasMx_Domain.Entities.Enum;
 using System.ComponentModel.DataAnnotations;
 
-namespace ControleMaquinasMx.Core.Models
+namespace ControleMaquinasMx_Domain.Entities
 {
     public class Maquina
     {

@@ -1,5 +1,5 @@
 ﻿using ControleMaquinasMx.Controllers;
-using ControleMaquinasMx_CoreShared.MaquinasDtos;
+using ControleMaquinasMx_DomainShared.MaquinasDtos;
 using ControleMaquinasMx_FakeData.ClienteData;
 using ControleMaquinasMx_Manager.Interfaces;
 using FluentAssertions;

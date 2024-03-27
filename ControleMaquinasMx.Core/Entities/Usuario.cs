@@ -1,7 +1,6 @@
-﻿using ControleMaquinasMx_Core.Models.Enum;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace ControleMaquinasMx_Core.Models
+namespace ControleMaquinasMx_Domain.Entities
 {
     public class Usuario
     {

@@ -1,4 +1,4 @@
-﻿using ControleMaquinasMx_Core.Models;
+﻿using ControleMaquinasMx_Domain.Entities;
 
 namespace ControleMaquinasMx_Manager.Interfaces
 {

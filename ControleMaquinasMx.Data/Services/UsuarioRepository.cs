@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using ControleMaquinasMx.Data.Data;
-using Microsoft.EntityFrameworkCore;
-using ControleMaquinasMx_Core.Models;
+using ControleMaquinasMx_Domain.Entities;
 using ControleMaquinasMx_Manager.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace ControleMaquinasMx_Data.Services
 {

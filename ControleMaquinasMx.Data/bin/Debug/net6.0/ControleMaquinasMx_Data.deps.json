@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ControleMaquinasMx_Data/1.0.0": {
         "dependencies": {
-          "ControleMaquinasMx_Core": "1.0.0",
+          "ControleMaquinasMx_Domain": "1.0.0",
           "ControleMaquinasMx_Manager": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.25",
           "Microsoft.EntityFrameworkCore": "6.0.22",
@@ -503,24 +503,24 @@
           }
         }
       },
-      "ControleMaquinasMx_Core/1.0.0": {
+      "ControleMaquinasMx_Domain/1.0.0": {
         "runtime": {
-          "ControleMaquinasMx_Core.dll": {}
+          "ControleMaquinasMx_Domain.dll": {}
         }
       },
-      "ControleMaquinasMx_CoreShared/1.0.0": {
+      "ControleMaquinasMx_DomainShared/1.0.0": {
         "dependencies": {
-          "ControleMaquinasMx_Core": "1.0.0"
+          "ControleMaquinasMx_Domain": "1.0.0"
         },
         "runtime": {
-          "ControleMaquinasMx_CoreShared.dll": {}
+          "ControleMaquinasMx_DomainShared.dll": {}
         }
       },
       "ControleMaquinasMx_Manager/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "ControleMaquinasMx_Core": "1.0.0",
-          "ControleMaquinasMx_CoreShared": "1.0.0",
+          "ControleMaquinasMx_Domain": "1.0.0",
+          "ControleMaquinasMx_DomainShared": "1.0.0",
           "Microsoft.Extensions.Identity.Core": "6.0.22",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.0"
         },
@@ -872,12 +872,12 @@
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
-    "ControleMaquinasMx_Core/1.0.0": {
+    "ControleMaquinasMx_Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ControleMaquinasMx_CoreShared/1.0.0": {
+    "ControleMaquinasMx_DomainShared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

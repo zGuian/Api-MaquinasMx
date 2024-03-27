@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using ControleMaquinasMx_Core.Models;
-using ControleMaquinasMx_CoreShared.PacotesDtos;
+using ControleMaquinasMx_Domain.Entities;
+using ControleMaquinasMx_DomainShared.PacotesDtos;
 
 namespace ControleMaquinasMx_Manager.Profiles
 {

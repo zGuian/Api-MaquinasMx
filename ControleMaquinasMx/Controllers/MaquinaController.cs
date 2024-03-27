@@ -1,5 +1,4 @@
-﻿using ControleMaquinasMx_CoreShared.Dtos;
-using ControleMaquinasMx_CoreShared.MaquinasDtos;
+﻿using ControleMaquinasMx_DomainShared.MaquinasDtos;
 using ControleMaquinasMx_Manager.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,8 +1,7 @@
-﻿using ControleMaquinasMx.Core.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ControleMaquinasMx_Core.Models
+namespace ControleMaquinasMx_Domain.Entities
 {
     public class Pacote
     {

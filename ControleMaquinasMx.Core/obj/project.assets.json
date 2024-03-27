@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj",
-      "projectName": "ControleMaquinasMx_Core",
-      "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj",
+      "projectUniqueName": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Domain.csproj",
+      "projectName": "ControleMaquinasMx_Domain",
+      "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Domain.csproj",
       "packagesPath": "C:\\Users\\fgb171\\.nuget\\packages\\",
       "outputPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\obj\\",
       "projectStyle": "PackageReference",

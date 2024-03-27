@@ -4,12 +4,12 @@
     "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx\\ControleMaquinasMx.csproj": {}
   },
   "projects": {
-    "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj": {
+    "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj",
-        "projectName": "ControleMaquinasMx_Core",
-        "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj",
+        "projectUniqueName": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Domain.csproj",
+        "projectName": "ControleMaquinasMx_Domain",
+        "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Domain.csproj",
         "packagesPath": "C:\\Users\\fgb171\\.nuget\\packages\\",
         "outputPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\obj\\",
         "projectStyle": "PackageReference",
@@ -93,8 +93,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj": {
-                "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj"
+              "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Domain.csproj": {
+                "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Domain.csproj"
               },
               "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Manager\\ControleMaquinasMx_Manager.csproj": {
                 "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Manager\\ControleMaquinasMx_Manager.csproj"
@@ -186,11 +186,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj": {
-                "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj"
+              "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Domain.csproj": {
+                "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Domain.csproj"
               },
-              "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx_CoreShared\\ControleMaquinasMx_CoreShared.csproj": {
-                "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx_CoreShared\\ControleMaquinasMx_CoreShared.csproj"
+              "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx_CoreShared\\ControleMaquinasMx_DomainShared.csproj": {
+                "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx_CoreShared\\ControleMaquinasMx_DomainShared.csproj"
               }
             }
           }
@@ -358,12 +358,12 @@
         }
       }
     },
-    "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx_CoreShared\\ControleMaquinasMx_CoreShared.csproj": {
+    "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx_CoreShared\\ControleMaquinasMx_DomainShared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx_CoreShared\\ControleMaquinasMx_CoreShared.csproj",
-        "projectName": "ControleMaquinasMx_CoreShared",
-        "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx_CoreShared\\ControleMaquinasMx_CoreShared.csproj",
+        "projectUniqueName": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx_CoreShared\\ControleMaquinasMx_DomainShared.csproj",
+        "projectName": "ControleMaquinasMx_DomainShared",
+        "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx_CoreShared\\ControleMaquinasMx_DomainShared.csproj",
         "packagesPath": "C:\\Users\\fgb171\\.nuget\\packages\\",
         "outputPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx_CoreShared\\obj\\",
         "projectStyle": "PackageReference",
@@ -387,8 +387,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj": {
-                "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj"
+              "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Domain.csproj": {
+                "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Domain.csproj"
               }
             }
           }
