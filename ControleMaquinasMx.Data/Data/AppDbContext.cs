@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ControleMaquinasMx.Core.Models;
-using ControleMaquinasMx_Core.Models;
-using ControleMaquinasMx_Data.Configuration;
+﻿using ControleMaquinasMx_Data.Configuration;
+using ControleMaquinasMx_Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace ControleMaquinasMx.Data.Data
 {

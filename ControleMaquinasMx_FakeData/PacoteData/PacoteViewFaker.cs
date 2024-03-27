@@ -1,5 +1,5 @@
 ﻿using Bogus;
-using ControleMaquinasMx_CoreShared.PacotesDtos;
+using ControleMaquinasMx_DomainShared.PacotesDtos;
 
 namespace ControleMaquinasMx_FakeData.HostnameData
 {

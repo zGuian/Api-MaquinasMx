@@ -20,7 +20,8 @@
           "Serilog.AspNetCore": "7.0.0",
           "Serilog.Settings.Configuration": "7.0.1",
           "Serilog.Sinks.Async": "1.5.0",
-          "Swashbuckle.AspNetCore": "6.5.0"
+          "Swashbuckle.AspNetCore": "6.5.0",
+          "ControleMaquinasMx_Application": "1.0.0.0"
         },
         "runtime": {
           "ControleMaquinasMx.dll": {}
@@ -825,22 +826,9 @@
           }
         }
       },
-      "ControleMaquinasMx_Core/1.0.0": {
-        "runtime": {
-          "ControleMaquinasMx_Core.dll": {}
-        }
-      },
-      "ControleMaquinasMx_CoreShared/1.0.0": {
-        "dependencies": {
-          "ControleMaquinasMx_Core": "1.0.0"
-        },
-        "runtime": {
-          "ControleMaquinasMx_CoreShared.dll": {}
-        }
-      },
       "ControleMaquinasMx_Data/1.0.0": {
         "dependencies": {
-          "ControleMaquinasMx_Core": "1.0.0",
+          "ControleMaquinasMx_Domain": "1.0.0",
           "ControleMaquinasMx_Manager": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.25",
           "Microsoft.EntityFrameworkCore": "6.0.22",
@@ -850,16 +838,25 @@
           "ControleMaquinasMx_Data.dll": {}
         }
       },
-      "ControleMaquinasMx_Manager/1.0.0": {
+      "ControleMaquinasMx_Domain/1.0.0": {
+        "runtime": {
+          "ControleMaquinasMx_Domain.dll": {}
+        }
+      },
+      "ControleMaquinasMx_DomainShared/1.0.0": {
         "dependencies": {
-          "AutoMapper": "12.0.1",
-          "ControleMaquinasMx_Core": "1.0.0",
-          "ControleMaquinasMx_CoreShared": "1.0.0",
-          "Microsoft.Extensions.Identity.Core": "6.0.22",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+          "ControleMaquinasMx_Domain": "1.0.0"
         },
         "runtime": {
-          "ControleMaquinasMx_Manager.dll": {}
+          "ControleMaquinasMx_DomainShared.dll": {}
+        }
+      },
+      "ControleMaquinasMx_Application/1.0.0.0": {
+        "runtime": {
+          "ControleMaquinasMx_Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -1388,23 +1385,23 @@
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
-    "ControleMaquinasMx_Core/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "ControleMaquinasMx_CoreShared/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "ControleMaquinasMx_Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ControleMaquinasMx_Manager/1.0.0": {
+    "ControleMaquinasMx_Domain/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ControleMaquinasMx_DomainShared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ControleMaquinasMx_Application/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

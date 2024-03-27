@@ -22,7 +22,7 @@ namespace ControleMaquinasMx_Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacote", b =>
+            modelBuilder.Entity("ControleMaquinasMx_Domain.Models.Pacote", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,7 +50,7 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.ToTable("Pacotes");
                 });
 
-            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Permissao", b =>
+            modelBuilder.Entity("ControleMaquinasMx_Domain.Models.Permissao", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -67,7 +67,7 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.ToTable("Permissoes");
                 });
 
-            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Usuario", b =>
+            modelBuilder.Entity("ControleMaquinasMx_Domain.Models.Usuario", b =>
                 {
                     b.Property<string>("Login")
                         .HasColumnType("nvarchar(450)");
@@ -130,7 +130,7 @@ namespace ControleMaquinasMx_Data.Migrations
                     b.ToTable("PermissaoUsuario");
                 });
 
-            modelBuilder.Entity("ControleMaquinasMx_Core.Models.Pacote", b =>
+            modelBuilder.Entity("ControleMaquinasMx_Domain.Models.Pacote", b =>
                 {
                     b.HasOne("ControleMaquinasMx.Core.Models.Maquina", "Maquinas")
                         .WithMany("Pacotes")
@@ -142,13 +142,13 @@ namespace ControleMaquinasMx_Data.Migrations
 
             modelBuilder.Entity("PermissaoUsuario", b =>
                 {
-                    b.HasOne("ControleMaquinasMx_Core.Models.Permissao", null)
+                    b.HasOne("ControleMaquinasMx_Domain.Models.Permissao", null)
                         .WithMany()
                         .HasForeignKey("PermissaoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ControleMaquinasMx_Core.Models.Usuario", null)
+                    b.HasOne("ControleMaquinasMx_Domain.Models.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UsuariosLogin")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ControleMaquinasMx.Manager\ControleMaquinasMx_Manager.csproj" />
+    <ProjectReference Include="..\ControleMaquinasMx.Manager\ControleMaquinasMx_Application.csproj" />
     <ProjectReference Include="..\ControleMaquinasMx\ControleMaquinasMx.csproj" />
     <ProjectReference Include="..\ControleMaquinasMx_FakeData\ControleMaquinasMx_FakeData.csproj" />
   </ItemGroup>

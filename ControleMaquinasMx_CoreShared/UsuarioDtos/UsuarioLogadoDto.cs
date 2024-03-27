@@ -1,6 +1,6 @@
-﻿using ControleMaquinasMx_CoreShared.PermissaoDtos;
+﻿using ControleMaquinasMx_DomainShared.PermissaoDtos;
 
-namespace ControleMaquinasMx_CoreShared.UsuarioDtos
+namespace ControleMaquinasMx_DomainShared.UsuarioDtos
 {
     public class UsuarioLogadoDto
     {

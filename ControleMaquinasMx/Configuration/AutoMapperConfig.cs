@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using ControleMaquinasMx_Manager.Profiles;
+using ControleMaquinasMx_Application.Profiles;
 
 namespace ControleMaquinasMx.Configuration
 {

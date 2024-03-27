@@ -1,52 +1,52 @@
 ﻿using AutoMapper;
-using ControleMaquinasMx_Core.Models;
-using ControleMaquinasMx_CoreShared.UsuarioDtos;
-using ControleMaquinasMx_Manager.Interfaces;
-using ControleMaquinasMx_Manager.Security;
+using ControleMaquinasMx_Domain.Entities;
+using ControleMaquinasMx_DomainShared.UsuarioDtos;
+using ControleMaquinasMx_Application.Interfaces;
+using ControleMaquinasMx_Application.Security;
 using Microsoft.AspNetCore.Identity;
 
-namespace ControleMaquinasMx_Manager.Implementation
+namespace ControleMaquinasMx_Application.Services
 {
-    public class UsuarioManager : IUsuarioManager
+    public class UsuarioServices : IUsuarioServices
     {
-        private readonly IUsuarioRepository _repository;
-        private readonly IMapper _mapper;
-        private readonly IJWTService _jwt;
+        private readonly IUsuarioRepository repository;
+        private readonly IMapper mapper;
+        private readonly IJWTService jwt;
 
-        public UsuarioManager(IUsuarioRepository repository, IMapper mapper, IJWTService jwtService)
+        public UsuarioServices(IUsuarioRepository repository, IMapper mapper, IJWTService jwtService)
         {
-            _repository = repository;
-            _mapper = mapper;
-            _jwt = jwtService;
+            this.repository = repository;
+            this.mapper = mapper;
+            this.jwt = jwtService;
         }
 
         public async Task<IEnumerable<UsuarioViewDto>> GetAsync()
         {
-            return _mapper.Map<IEnumerable<Usuario>, IEnumerable<UsuarioViewDto>>(await _repository.GetUsersAsync());
+            return mapper.Map<IEnumerable<Usuario>, IEnumerable<UsuarioViewDto>>(await repository.GetUsersAsync());
         }
 
         public async Task<UsuarioViewDto> GetAsync(string login)
         {
-            return _mapper.Map<UsuarioViewDto>(await _repository.GetUsersAsync(login));
+            return mapper.Map<UsuarioViewDto>(await repository.GetUsersAsync(login));
         }
 
         public async Task<UsuarioViewDto> InsertAsync(NovoUsuarioDto novoUsuario)
         {
-            var user = _mapper.Map<Usuario>(novoUsuario);
+            var user = mapper.Map<Usuario>(novoUsuario);
             ServiceSecurity.ConvertSenhaEmHash(user);
-            user = await _repository.CreateUserAsync(user);
-            return _mapper.Map<UsuarioViewDto>(user);
+            user = await repository.CreateUserAsync(user);
+            return mapper.Map<UsuarioViewDto>(user);
         }
 
         public async Task<UsuarioViewDto> UpdateAsync(Usuario usuario)
         {
             ServiceSecurity.ConvertSenhaEmHash(usuario);
-            return _mapper.Map<UsuarioViewDto>(await _repository.UpdateUserAsync(usuario));
+            return mapper.Map<UsuarioViewDto>(await repository.UpdateUserAsync(usuario));
         }
 
         public async Task<UsuarioLogadoDto> ValidaUserGeraTokenAsync(Usuario usuario)
         {
-            var userConsultado = await _repository.GetUsersAsync(usuario.Login);
+            var userConsultado = await repository.GetUsersAsync(usuario.Login);
             if (userConsultado == null)
             {
                 return null!;
@@ -54,8 +54,8 @@ namespace ControleMaquinasMx_Manager.Implementation
             var temp = await ServiceSecurity.ValidaAtualizaHashAsync(usuario, userConsultado.Senha);
             if (temp)
             {
-                var userLogado = _mapper.Map<UsuarioLogadoDto>(userConsultado);
-                userLogado.Token = _jwt.GerarToken(userConsultado);
+                var userLogado = mapper.Map<UsuarioLogadoDto>(userConsultado);
+                userLogado.Token = jwt.GerarToken(userConsultado);
                 return userLogado;
             }
             return null!;
@@ -81,10 +81,10 @@ namespace ControleMaquinasMx_Manager.Implementation
 
         public async Task<AtualizaUsuarioDto> RecuperaSenhaAsync(AtualizaUsuarioDto usuario)
         {
-            var userConvert = _mapper.Map<Usuario>(usuario);
-            await _repository.RecuperaUserAsync(userConvert);
+            var userConvert = mapper.Map<Usuario>(usuario);
+            await repository.RecuperaUserAsync(userConvert);
             await ValidaUserGeraTokenAsync(userConvert);
-            return _mapper.Map<AtualizaUsuarioDto>(userConvert);
+            return mapper.Map<AtualizaUsuarioDto>(userConvert);
         }
     }
 }

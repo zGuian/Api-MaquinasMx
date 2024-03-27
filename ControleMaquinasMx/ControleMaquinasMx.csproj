@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>annotations</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -35,7 +35,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ControleMaquinasMx.Data\ControleMaquinasMx_Data.csproj" />
-    <ProjectReference Include="..\ControleMaquinasMx.Manager\ControleMaquinasMx_Manager.csproj" />
+    <ProjectReference Include="..\ControleMaquinasMx.Manager\ControleMaquinasMx_Application.csproj" />
   </ItemGroup>
 
 </Project>

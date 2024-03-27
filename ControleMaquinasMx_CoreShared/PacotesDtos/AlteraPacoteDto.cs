@@ -1,4 +1,4 @@
-﻿namespace ControleMaquinasMx_CoreShared.PacotesDtos
+﻿namespace ControleMaquinasMx_DomainShared.PacotesDtos
 {
     public class AlteraPacoteDto
     {

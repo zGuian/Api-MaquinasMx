@@ -1,9 +1,9 @@
-﻿using ControleMaquinasMx_Core.Models;
-using ControleMaquinasMx_CoreShared.UsuarioDtos;
+﻿using ControleMaquinasMx_Domain.Entities;
+using ControleMaquinasMx_DomainShared.UsuarioDtos;
 
-namespace ControleMaquinasMx_Manager.Interfaces
+namespace ControleMaquinasMx_Application.Interfaces
 {
-    public interface IUsuarioManager
+    public interface IUsuarioServices
     {
         Task<IEnumerable<UsuarioViewDto>> GetAsync();
         Task<UsuarioViewDto> GetAsync(string login);

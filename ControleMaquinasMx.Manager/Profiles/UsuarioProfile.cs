@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using ControleMaquinasMx_Core.Models;
-using ControleMaquinasMx_CoreShared.PermissaoDtos;
-using ControleMaquinasMx_CoreShared.UsuarioDtos;
+using ControleMaquinasMx_Domain.Entities;
+using ControleMaquinasMx_DomainShared.PermissaoDtos;
+using ControleMaquinasMx_DomainShared.UsuarioDtos;
 
-namespace ControleMaquinasMx_Manager.Profiles
+namespace ControleMaquinasMx_Application.Profiles
 {
     public class UsuarioProfile : Profile
     {

@@ -1,7 +1,7 @@
-﻿using ControleMaquinasMx_Core.Models.Enum;
+﻿using ControleMaquinasMx_Domain.Entities.Enum;
 using System.ComponentModel.DataAnnotations;
 
-namespace ControleMaquinasMx_CoreShared.Dtos
+namespace ControleMaquinasMx_DomainShared.MaquinasDtos
 {
     /// <summary>
     /// Objeto utilizado para adicionar nova maquina

@@ -1,6 +1,6 @@
-﻿using ControleMaquinasMx_Core.Models;
+﻿using ControleMaquinasMx_Domain.Entities;
 
-namespace ControleMaquinasMx_Manager.Interfaces
+namespace ControleMaquinasMx_Application.Interfaces
 {
     public interface IUsuarioRepository
     {

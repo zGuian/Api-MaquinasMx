@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using ControleMaquinasMx.Core.Models;
 using ControleMaquinasMx.Data.Data;
-using ControleMaquinasMx_Core.Interfaces;
-using ControleMaquinasMx_CoreShared.MaquinasDtos;
+using ControleMaquinasMx_Domain.Entities;
+using ControleMaquinasMx_Domain.Interfaces;
+using ControleMaquinasMx_DomainShared.MaquinasDtos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 

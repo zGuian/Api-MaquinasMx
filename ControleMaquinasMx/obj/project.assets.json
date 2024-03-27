@@ -1304,34 +1304,11 @@
           }
         }
       },
-      "ControleMaquinasMx_Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/ControleMaquinasMx_Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ControleMaquinasMx_Core.dll": {}
-        }
-      },
-      "ControleMaquinasMx_CoreShared/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "ControleMaquinasMx_Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/ControleMaquinasMx_CoreShared.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ControleMaquinasMx_CoreShared.dll": {}
-        }
-      },
       "ControleMaquinasMx_Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "ControleMaquinasMx_Core": "1.0.0",
+          "ControleMaquinasMx_Domain": "1.0.0",
           "ControleMaquinasMx_Manager": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.25",
           "Microsoft.EntityFrameworkCore": "6.0.22",
@@ -1344,13 +1321,36 @@
           "bin/placeholder/ControleMaquinasMx_Data.dll": {}
         }
       },
+      "ControleMaquinasMx_Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ControleMaquinasMx_Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ControleMaquinasMx_Domain.dll": {}
+        }
+      },
+      "ControleMaquinasMx_DomainShared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ControleMaquinasMx_Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ControleMaquinasMx_DomainShared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ControleMaquinasMx_DomainShared.dll": {}
+        }
+      },
       "ControleMaquinasMx_Manager/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "ControleMaquinasMx_Core": "1.0.0",
-          "ControleMaquinasMx_CoreShared": "1.0.0",
+          "ControleMaquinasMx_Domain": "1.0.0",
+          "ControleMaquinasMx_DomainShared": "1.0.0",
           "Microsoft.Extensions.Identity.Core": "6.0.22",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.0"
         },
@@ -3582,20 +3582,20 @@
         "version.txt"
       ]
     },
-    "ControleMaquinasMx_Core/1.0.0": {
-      "type": "project",
-      "path": "../ControleMaquinasMx.Core/ControleMaquinasMx_Core.csproj",
-      "msbuildProject": "../ControleMaquinasMx.Core/ControleMaquinasMx_Core.csproj"
-    },
-    "ControleMaquinasMx_CoreShared/1.0.0": {
-      "type": "project",
-      "path": "../ControleMaquinasMx_CoreShared/ControleMaquinasMx_CoreShared.csproj",
-      "msbuildProject": "../ControleMaquinasMx_CoreShared/ControleMaquinasMx_CoreShared.csproj"
-    },
     "ControleMaquinasMx_Data/1.0.0": {
       "type": "project",
       "path": "../ControleMaquinasMx.Data/ControleMaquinasMx_Data.csproj",
       "msbuildProject": "../ControleMaquinasMx.Data/ControleMaquinasMx_Data.csproj"
+    },
+    "ControleMaquinasMx_Domain/1.0.0": {
+      "type": "project",
+      "path": "../ControleMaquinasMx.Core/ControleMaquinasMx_Domain.csproj",
+      "msbuildProject": "../ControleMaquinasMx.Core/ControleMaquinasMx_Domain.csproj"
+    },
+    "ControleMaquinasMx_DomainShared/1.0.0": {
+      "type": "project",
+      "path": "../ControleMaquinasMx_CoreShared/ControleMaquinasMx_DomainShared.csproj",
+      "msbuildProject": "../ControleMaquinasMx_CoreShared/ControleMaquinasMx_DomainShared.csproj"
     },
     "ControleMaquinasMx_Manager/1.0.0": {
       "type": "project",

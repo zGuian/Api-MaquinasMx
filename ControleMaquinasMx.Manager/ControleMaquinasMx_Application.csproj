@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>annotations</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ControleMaquinasMx.Core\ControleMaquinasMx_Core.csproj" />
-    <ProjectReference Include="..\ControleMaquinasMx_CoreShared\ControleMaquinasMx_CoreShared.csproj" />
+    <ProjectReference Include="..\ControleMaquinasMx.Core\ControleMaquinasMx_Domain.csproj" />
+    <ProjectReference Include="..\ControleMaquinasMx_CoreShared\ControleMaquinasMx_DomainShared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

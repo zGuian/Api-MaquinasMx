@@ -1,4 +1,4 @@
-﻿namespace ControleMaquinasMx_Core.Models.Enum
+﻿namespace ControleMaquinasMx_Domain.Entities.Enum
 {
     public enum Criticidade : byte
     {

@@ -1,4 +1,4 @@
-﻿using ControleMaquinasMx.Core.Models;
+﻿using ControleMaquinasMx_Domain.Entities;
 using GraphQL.Types;
 
 namespace ControleMaquinasMx.GraphQL

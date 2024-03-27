@@ -1,7 +1,7 @@
 ﻿using ControleMaquinasMx.Controllers;
-using ControleMaquinasMx_CoreShared.MaquinasDtos;
+using ControleMaquinasMx_DomainShared.MaquinasDtos;
 using ControleMaquinasMx_FakeData.ClienteData;
-using ControleMaquinasMx_Manager.Interfaces;
+using ControleMaquinasMx_Application.Interfaces;
 using FluentAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +12,7 @@ namespace ControleMaquinaMx_Testes.Controllers
 {
     public class MaquinasControllerTeste
     {
-        private readonly IMaquinasManager _manager;
+        private readonly IMaquinasServices _manager;
         private readonly ILogger<MaquinaController> _logger;
         private readonly MaquinaController _controller;
         private readonly MaquinaViewDto _maquinaDto;
@@ -20,7 +20,7 @@ namespace ControleMaquinaMx_Testes.Controllers
 
         public MaquinasControllerTeste()
         {
-            _manager = Substitute.For<IMaquinasManager>();
+            _manager = Substitute.For<IMaquinasServices>();
             _logger = Substitute.For<ILogger<MaquinaController>>();
             _controller = new MaquinaController(_manager, _logger);
             _listaMaquinas = new MaquinaViewFaker().Generate(10);

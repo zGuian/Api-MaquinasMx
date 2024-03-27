@@ -865,27 +865,27 @@
           }
         }
       },
-      "ControleMaquinasMx_Core/1.0.0": {
+      "ControleMaquinasMx_Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/ControleMaquinasMx_Core.dll": {}
+          "bin/placeholder/ControleMaquinasMx_Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ControleMaquinasMx_Core.dll": {}
+          "bin/placeholder/ControleMaquinasMx_Domain.dll": {}
         }
       },
-      "ControleMaquinasMx_CoreShared/1.0.0": {
+      "ControleMaquinasMx_DomainShared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "ControleMaquinasMx_Core": "1.0.0"
+          "ControleMaquinasMx_Domain": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/ControleMaquinasMx_CoreShared.dll": {}
+          "bin/placeholder/ControleMaquinasMx_DomainShared.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ControleMaquinasMx_CoreShared.dll": {}
+          "bin/placeholder/ControleMaquinasMx_DomainShared.dll": {}
         }
       },
       "ControleMaquinasMx_Manager/1.0.0": {
@@ -893,8 +893,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "ControleMaquinasMx_Core": "1.0.0",
-          "ControleMaquinasMx_CoreShared": "1.0.0",
+          "ControleMaquinasMx_Domain": "1.0.0",
+          "ControleMaquinasMx_DomainShared": "1.0.0",
           "Microsoft.Extensions.Identity.Core": "6.0.22",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.0"
         },
@@ -2226,15 +2226,15 @@
         "version.txt"
       ]
     },
-    "ControleMaquinasMx_Core/1.0.0": {
+    "ControleMaquinasMx_Domain/1.0.0": {
       "type": "project",
-      "path": "../ControleMaquinasMx.Core/ControleMaquinasMx_Core.csproj",
-      "msbuildProject": "../ControleMaquinasMx.Core/ControleMaquinasMx_Core.csproj"
+      "path": "../ControleMaquinasMx.Core/ControleMaquinasMx_Domain.csproj",
+      "msbuildProject": "../ControleMaquinasMx.Core/ControleMaquinasMx_Domain.csproj"
     },
-    "ControleMaquinasMx_CoreShared/1.0.0": {
+    "ControleMaquinasMx_DomainShared/1.0.0": {
       "type": "project",
-      "path": "../ControleMaquinasMx_CoreShared/ControleMaquinasMx_CoreShared.csproj",
-      "msbuildProject": "../ControleMaquinasMx_CoreShared/ControleMaquinasMx_CoreShared.csproj"
+      "path": "../ControleMaquinasMx_CoreShared/ControleMaquinasMx_DomainShared.csproj",
+      "msbuildProject": "../ControleMaquinasMx_CoreShared/ControleMaquinasMx_DomainShared.csproj"
     },
     "ControleMaquinasMx_Manager/1.0.0": {
       "type": "project",
@@ -2244,7 +2244,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "ControleMaquinasMx_Core >= 1.0.0",
+      "ControleMaquinasMx_Domain >= 1.0.0",
       "ControleMaquinasMx_Manager >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.25",
       "Microsoft.EntityFrameworkCore >= 6.0.22",
@@ -2286,8 +2286,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj": {
-              "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Core.csproj"
+            "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Domain.csproj": {
+              "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Core\\ControleMaquinasMx_Domain.csproj"
             },
             "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Manager\\ControleMaquinasMx_Manager.csproj": {
               "projectPath": "C:\\ProjetosDev\\[PROJETO] ControleMaquinasMx\\Api_ControleMaquinasMx\\ControleMaquinasMx.Manager\\ControleMaquinasMx_Manager.csproj"

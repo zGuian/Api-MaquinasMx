@@ -1,4 +1,4 @@
-﻿namespace ControleMaquinasMx_CoreShared.PermissaoDtos
+﻿namespace ControleMaquinasMx_DomainShared.PermissaoDtos
 {
     public class PermissaoViewDto
     {

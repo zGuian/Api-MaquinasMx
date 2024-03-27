@@ -1,9 +1,8 @@
-﻿using ControleMaquinasMx_CoreShared.Dtos;
-using ControleMaquinasMx_CoreShared.MaquinasDtos;
+﻿using ControleMaquinasMx_DomainShared.MaquinasDtos;
 
-namespace ControleMaquinasMx_Manager.Interfaces
+namespace ControleMaquinasMx_Application.Interfaces
 {
-    public interface IMaquinasManager
+    public interface IMaquinasServices
     {
         Task<IEnumerable<MaquinaViewDto>> SearchMaquinasAsync();
         Task<MaquinaViewDto> SearchMaquinasAsync(int id);

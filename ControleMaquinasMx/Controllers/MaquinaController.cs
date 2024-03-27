@@ -1,6 +1,5 @@
-﻿using ControleMaquinasMx_CoreShared.Dtos;
-using ControleMaquinasMx_CoreShared.MaquinasDtos;
-using ControleMaquinasMx_Manager.Interfaces;
+﻿using ControleMaquinasMx_DomainShared.MaquinasDtos;
+using ControleMaquinasMx_Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ControleMaquinasMx.Controllers
@@ -9,20 +8,20 @@ namespace ControleMaquinasMx.Controllers
     [Route("api/v1/[controller]")]
     public class MaquinaController : ControllerBase
     {
-        private readonly IMaquinasManager _maquinasManager;
-        private readonly ILogger<MaquinaController> _logger;
+        private readonly IMaquinasServices maquinasManager;
+        private readonly ILogger<MaquinaController> logger;
 
-        public MaquinaController(IMaquinasManager maquinasManager, ILogger<MaquinaController> logger)
+        public MaquinaController(IMaquinasServices maquinasManager, ILogger<MaquinaController> logger)
         {
-            _maquinasManager = maquinasManager;
-            _logger = logger;
+            this.maquinasManager = maquinasManager;
+            this.logger = logger;
         }
 
         [HttpGet]
         public async Task<IActionResult> BuscaTodasMaquinas()
         {
-            _logger.LogInformation("Foi solicitado um request de todas as maquinas cadastradas ");
-            var result = await _maquinasManager.SearchMaquinasAsync();
+            logger.LogInformation("Foi solicitado um request de todas as maquinas cadastradas ");
+            var result = await maquinasManager.SearchMaquinasAsync();
             if (!result.Any())
             {
                 return NotFound();
@@ -33,8 +32,8 @@ namespace ControleMaquinasMx.Controllers
         [HttpGet("GetId/{id}")]
         public async Task<IActionResult> BuscarMaquinaPorId(int id)
         {
-            _logger.LogInformation($"Foi solicitado um request da máquina com seguinte ID: {id}");
-            var result = await _maquinasManager.SearchMaquinasAsync(id);
+            logger.LogInformation($"Foi solicitado um request da máquina com seguinte ID: {id}");
+            var result = await maquinasManager.SearchMaquinasAsync(id);
             if (result == null)
             {
                 return NotFound();
@@ -45,8 +44,8 @@ namespace ControleMaquinasMx.Controllers
         [HttpPost]
         public async Task<IActionResult> AdicionarMaquinas(NovaMaquinaDto maquinaDto)
         {
-            _logger.LogInformation("Foi requisitado um novo cadastro de maquinas.");
-            var result = await _maquinasManager.InsertMaquinasAsync(maquinaDto);
+            logger.LogInformation("Foi requisitado um novo cadastro de maquinas.");
+            var result = await maquinasManager.InsertMaquinasAsync(maquinaDto);
             if (result == null)
             {
                 return BadRequest("Não foi possivel cadastrar a maquina. Consulte os paramentros enviados: " + maquinaDto);
@@ -57,8 +56,8 @@ namespace ControleMaquinasMx.Controllers
         [HttpPut("Update/{id}")]
         public async Task<IActionResult> AtualizarMaquina([FromBody] AlteraMaquinaDto maquinasDto, int id)
         {
-            _logger.LogInformation("Solicitado atualização de maquinas");
-            var result = await _maquinasManager.UpdateMaquinasAsync(maquinasDto, id);
+            logger.LogInformation("Solicitado atualização de maquinas");
+            var result = await maquinasManager.UpdateMaquinasAsync(maquinasDto, id);
             if (result == null)
             {
                 return NotFound($"Não foi possivel atualizar a maquina. Id não encontrado\nId enviado: {id}");
@@ -69,8 +68,8 @@ namespace ControleMaquinasMx.Controllers
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            _logger.LogInformation("Solicitando delete de maquina");
-            var result = await _maquinasManager.DeleteMaquinasAsync(id);
+            logger.LogInformation("Solicitando delete de maquina");
+            var result = await maquinasManager.DeleteMaquinasAsync(id);
             if (result == false)
             {
                 return NotFound($"Não foi possivel deletar a maquina. Id não encontrado\nId enviado: {id}");

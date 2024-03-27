@@ -1,5 +1,5 @@
 ﻿using ControleMaquinasMx_Data.Services;
-using ControleMaquinasMx_Manager.Interfaces;
+using ControleMaquinasMx_Application.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;

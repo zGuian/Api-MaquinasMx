@@ -1,4 +1,4 @@
-﻿namespace ControleMaquinasMx_CoreShared.UsuarioDtos
+﻿namespace ControleMaquinasMx_DomainShared.UsuarioDtos
 {
     public class NovoUsuarioDto
     {

@@ -1,12 +1,12 @@
-﻿using ControleMaquinasMx_Core.Models;
-using ControleMaquinasMx_Manager.Interfaces;
+﻿using ControleMaquinasMx_Domain.Entities;
+using ControleMaquinasMx_Application.Interfaces;
 using Microsoft.AspNetCore.Identity;
 
-namespace ControleMaquinasMx_Manager.Security
+namespace ControleMaquinasMx_Application.Security
 {
     public static class ServiceSecurity
     {
-        private static readonly IUsuarioManager manager;
+        private static readonly IUsuarioServices manager;
 
         public static void ConvertSenhaEmHash(Usuario usuario)
         {

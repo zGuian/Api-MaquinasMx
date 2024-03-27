@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ControleMaquinasMx_CoreShared.PacotesDtos
+namespace ControleMaquinasMx_DomainShared.PacotesDtos
 {
     public class NovoPacoteDto
     {

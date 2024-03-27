@@ -1,6 +1,6 @@
-﻿using ControleMaquinasMx_Core.Models;
-using ControleMaquinasMx_CoreShared.UsuarioDtos;
-using ControleMaquinasMx_Manager.Interfaces;
+﻿using ControleMaquinasMx_Domain.Entities;
+using ControleMaquinasMx_DomainShared.UsuarioDtos;
+using ControleMaquinasMx_Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,17 +10,17 @@ namespace ControleMaquinasMx.Controllers
     [Route("api/v1/[controller]")]
     public class UsuarioController : Controller
     {
-        private readonly IUsuarioManager _manager;
+        private readonly IUsuarioServices userServices;
 
-        public UsuarioController(IUsuarioManager manager)
+        public UsuarioController(IUsuarioServices manager)
         {
-            _manager = manager;
+            this.userServices = manager;
         }
 
         [HttpGet("login")]
         public async Task<IActionResult> Login([FromBody] Usuario usuario)
         {
-            var usuarioLogado = await _manager.ValidaUserGeraTokenAsync(usuario);
+            var usuarioLogado = await userServices.ValidaUserGeraTokenAsync(usuario);
             if (usuarioLogado != null)
             {
                 return Ok(usuarioLogado);
@@ -33,23 +33,23 @@ namespace ControleMaquinasMx.Controllers
         public async Task<IActionResult> GetUser()
         {
             string login = User.Identity.Name;
-            var usuario = await _manager.GetAsync(login);
+            var usuario = await userServices.GetAsync(login);
             return Ok(usuario);
         }
 
         [HttpPost]
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> PostUser(NovoUsuarioDto usuario)
+        public async Task<IActionResult> PostUser(NovoUsuarioDto user)
         {
-            var usuarioInsert = await _manager.InsertAsync(usuario);
-            return CreatedAtAction(nameof(GetUser), new { login = usuario.Login }, usuarioInsert);
+            var userInsert = await userServices.InsertAsync(user);
+            return CreatedAtAction(nameof(GetUser), new { login = user.Login }, userInsert);
         }
 
         [HttpPut]
         [Authorize(Roles = "Administrator, Comum, Visualizador")]
         public async Task<IActionResult> PutUser(Usuario usuario)
         {
-            var userUpdate = await _manager.UpdateAsync(usuario);
+            var userUpdate = await userServices.UpdateAsync(usuario);
             return Ok(userUpdate);
         }
 
@@ -60,7 +60,7 @@ namespace ControleMaquinasMx.Controllers
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> RecuperaSenha([FromBody] AtualizaUsuarioDto usuario)
         {
-            var userRecuperado = await _manager.RecuperaSenhaAsync(usuario);
+            var userRecuperado = await userServices.RecuperaSenhaAsync(usuario);
             return Ok(userRecuperado);
         }
     }

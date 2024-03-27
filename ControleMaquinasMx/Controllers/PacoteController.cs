@@ -1,5 +1,5 @@
-﻿using ControleMaquinasMx_CoreShared.PacotesDtos;
-using ControleMaquinasMx_Manager.Interfaces;
+﻿using ControleMaquinasMx_DomainShared.PacotesDtos;
+using ControleMaquinasMx_Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,11 +9,11 @@ namespace ControleMaquinasMx.Controllers
     [Route("api/v1/[controller]")]
     public class PacoteController : Controller
     {
-        private readonly IPacotesManager _pacotesManager;
+        private readonly IPacotesServices pacotesManager;
 
-        public PacoteController(IPacotesManager pacotesManager)
+        public PacoteController(IPacotesServices pacotesManager)
         {
-            _pacotesManager = pacotesManager;
+            this.pacotesManager = pacotesManager;
         }
 
         [HttpGet]
@@ -24,7 +24,7 @@ namespace ControleMaquinasMx.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> BuscaTodosPacotes()
         {
-            var result = await _pacotesManager.SearchPacotesAsync();
+            var result = await pacotesManager.SearchPacotesAsync();
             if (result == null)
             {
                 return NotFound("Não encontrado nenhum pacote");
@@ -41,7 +41,7 @@ namespace ControleMaquinasMx.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> BuscaPacotesPorId(int id)
         {
-            var result = await _pacotesManager.SearchPacotesIdAsync(id);
+            var result = await pacotesManager.SearchPacotesIdAsync(id);
             if (result == null)
             {
                 return NotFound($"Maquina não encontrada \nconsulte o ID: {id} enviado");
@@ -53,7 +53,7 @@ namespace ControleMaquinasMx.Controllers
         [HttpPost]
         public async Task<IActionResult> AdicionaPacote([FromBody] NovoPacoteDto pacoteDto)
         {
-            var result = await _pacotesManager.InsertPacotesAsync(pacoteDto);
+            var result = await pacotesManager.InsertPacotesAsync(pacoteDto);
             if (result == null)
             {
                 return NotFound("Não foi possivel cadastrar a maquina. Consulte os paramentros enviados: " + pacoteDto.NomeKb);
@@ -71,7 +71,7 @@ namespace ControleMaquinasMx.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AtualizarPacote([FromBody] AlteraPacoteDto pacoteDto, int id)
         {
-            var result = await _pacotesManager.UpdatePacotesAsync(pacoteDto, id);
+            var result = await pacotesManager.UpdatePacotesAsync(pacoteDto, id);
             if (result == null)
             {
                 return NotFound($"Não foi possivel atualizar a maquina. Id não encontrado: \nId enviado: {id}");
@@ -87,7 +87,7 @@ namespace ControleMaquinasMx.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeletePacote(int id)
         {
-            var result = await _pacotesManager.DeletePacoteAsync(id);
+            var result = await pacotesManager.DeletePacoteAsync(id);
             if (result == false)
             {
                 return NotFound("Não foi possivel deletar a maquina. Id não encontrado");

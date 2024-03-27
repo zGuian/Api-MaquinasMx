@@ -1,7 +1,7 @@
-﻿using ControleMaquinasMx_Core.Interfaces;
+﻿using ControleMaquinasMx_Domain.Interfaces;
 using ControleMaquinasMx_Data.Repository;
-using ControleMaquinasMx_Manager.Interfaces;
-using ControleMaquinasMx_Manager.Implementation;
+using ControleMaquinasMx_Application.Interfaces;
+using ControleMaquinasMx_Application.Services;
 using ControleMaquinasMx_Data.Services;
 
 namespace ControleMaquinasMx.Configuration
@@ -11,11 +11,11 @@ namespace ControleMaquinasMx.Configuration
         public static void AddDependencyInjectionConfiguration(this IServiceCollection services)
         {
             services.AddScoped<IMaquinasRepository, MaquinasRepository>();
-            services.AddScoped<IMaquinasManager, MaquinasManager>();
+            services.AddScoped<IMaquinasServices, MaquinaServices>();
             services.AddScoped<IPacotesRepository, PacotesRepository>();
-            services.AddScoped<IPacotesManager, PacotesManager>();
+            services.AddScoped<IPacotesServices, PacotesServices>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-            services.AddScoped<IUsuarioManager, UsuarioManager>();
+            services.AddScoped<IUsuarioServices, UsuarioServices>();
         }
     }
 }
